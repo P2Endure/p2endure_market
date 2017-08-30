@@ -6,7 +6,7 @@ export default class Bar extends React.Component{
 
 constructor(props) {
     super(props);
-    this.state = { chartData: require('../data/letter_2.json'),
+    this.state = { chartData: require('../data/barTest_2.json'),
       chartSeries: [
                     {
                       field: 'EnergySaving',

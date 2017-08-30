@@ -7,7 +7,7 @@ export default class Line extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { chartData: require('../data/test.json'),
+    this.state = { chartData: require('../data/lineTest.json'),
                   chartSeries: [
                     {
                       field: 'Room 1',
