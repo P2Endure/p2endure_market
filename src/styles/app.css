@@ -1,0 +1,120 @@
+.app {
+  position: relative;
+ 
+}
+
+#jumbo {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    background-color: white;
+}
+  
+.jumbotron h1, h3{
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.table h1, h2{
+  color: black;
+} 
+
+.services h3{
+  color: #585858;
+}
+
+* {
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;  /* Firefox, other Gecko */
+  box-sizing: border-box;    /* Opera/IE 8+ */
+}
+
+#line{
+  border-top: 1.5px solid wheat;
+}
+
+/*********************************
+Header navigation
+*********************************/
+.navbar{
+  position: relative;
+  margin: 0 auto;
+  border-radius: 0px;
+}
+
+.navbar-inverse{
+  border-radius: 0px;
+}
+
+/*********************************
+Layout for diagramms and for the
+sketchfab-model
+*********************************/
+
+
+h1, h2{
+  color: darkgrey;
+}
+
+h4.panel-title{
+  font-size: 13px;
+}
+
+.panel.panel-default{
+  background-color: white;
+  border-bottom-color: wheat;
+  border-top-color: white;
+  border-left-color: white;
+  border-right-color: white;
+}
+
+.panel.panel-default > .panel-heading{
+  background-color: white;
+  text-align: center;
+}
+
+.panel-default > .panel-heading panels.less + .panel-collapse > .panel-body{
+  border-top-color: wheat;
+  width:1580px;
+}
+
+/*********************************
+Button
+*********************************/
+
+#calculation{
+  margin-top: 230px;
+}
+
+/*********************************
+Footer
+*********************************/
+
+footer {
+  clear: both;
+  display: block;
+  width: 100%;
+  padding: 3px 100px;
+  margin: 0 auto;
+  height: 80px;
+  background-color: #131313;
+  background-size: 20px 20px;
+  color: #ccc;
+}
+
+footer section {
+  float: left;
+  width: 33.3%;
+}
+
+footer h2 {
+  font-size: 1em;
+}
+
+footer p {
+  font-size: 0.8em;
+}
+
+footer a {
+  color: #ccc;
+}

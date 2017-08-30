@@ -1,0 +1,91 @@
+@media screen and (max-width: 1199px) {
+body{width:100%;}
+nav ul {
+  padding: 0 0 0 5%;
+}
+app app-header{
+  width: 50%;
+  float: left;
+}
+}
+@media screen and (max-width: 970px) {    /* Tablet  */
+body, header,main, footer {width:100%;}
+
+body {background:white;}
+
+header {
+  padding: 20px 0;
+}
+main {
+  background:white;
+}
+
+figure {
+  margin:0;
+}
+
+footer {height:auto;}
+
+nav ul {
+  padding: 0 0 0 2%;
+  font: 1.2em Arial,Helvetica,sans-serif;
+}
+}
+/*  Tablet ends */
+
+@media screen and (max-width: 850px) {
+
+nav ul {
+  padding: 0 0 0 2%;
+  font: 1.1em Arial,Helvetica,sans-serif;
+}
+nav li a{
+  padding:.5em 1.5em 0 0;
+}
+}
+
+/*    Smartphone  */
+@media screen and (max-width: 720px) {
+
+nav ul {
+  padding: 0 0 0 2%;
+
+}
+
+nav li a {
+  padding: 0.5em 1em 0 0;
+}
+
+
+section, section.services, #form4, footer section {
+  width:50%;
+}
+header a#navlink {
+  display:block;
+}
+
+nav {
+  position:relative;
+  background:transparent;
+}
+nav ul {
+  display:block;
+  margin: 3em 0 5em;
+}
+nav ul li{width:90%;margin: 5px 2%;}
+nav ul li a{display:inline-block; width:90%; background: black; margin:5px 5%; border-radius:10px;}
+
+
+}
+/*   Smartphone ends  */
+
+/*    Smartphone  */
+@media screen and (max-width: 600px) {
+
+
+section, section.services, #form4, footer section {
+  width:100%;
+}
+
+
+}
