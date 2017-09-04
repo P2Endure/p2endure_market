@@ -16,7 +16,7 @@ import Bar from './diagrams/bar.jsx';
 import Donut from './diagrams/donut.jsx';
 import pieTest from './data/pieTest.json';
 import Scatter from './diagrams/Scatter.jsx';
-import { Button, Jumbotron, Panel, Grid, Row, Col, Table, Image, Thumbnail, Checkbox, PanelGroup, Accordion} from 'react-bootstrap'; 
+import { Button, Jumbotron, Panel, Grid, Row, Col, Table, Image, Thumbnail, Checkbox, PanelGroup, Accordion} from 'react-bootstrap';
 //import './node_modules/dxf-parser/lib/DxfParser.js'
 
 class App extends Component {
@@ -37,7 +37,7 @@ class App extends Component {
   }
 
   render(){
-   
+
     //var screenIndex = 2;
     //var ActiveScreen
     //var reader = new FileReader();
@@ -61,7 +61,7 @@ class App extends Component {
 				};
     };*/
     return(
-      
+
   <div className="app">
     <div id="navbar"></div>
      <Jumbotron id="jumbo" fluid>
@@ -73,11 +73,11 @@ class App extends Component {
           </Panel>
         </Accordion>
       </Jumbotron>
-     
+
    <Grid>
     <Row>
     <Col xs={6} md={2}>
-      <Thumbnail src={require("./Casement.JPG")}>
+      <Thumbnail src={require('./Casement.jpg')}>
         <h5>smart window</h5>
           <Accordion>
             <Panel header="More" eventKey="2">
@@ -90,7 +90,7 @@ class App extends Component {
       </Thumbnail>
     </Col>
     <Col xs={6} md={2}>
-      <Thumbnail src={require("./HVAC.jpg")}>
+      <Thumbnail src={require('./HVAC.JPG')}>
         <h5>Prefab HVAC system</h5>
         <Accordion>
           <Panel header="More" eventKey="3">
@@ -103,7 +103,7 @@ class App extends Component {
       </Thumbnail>
     </Col>
     <Col xs={6} md={2}>
-      <Thumbnail src={require("./easy_panel.jpg")}>
+      <Thumbnail src={require('./easy_panel.jpg')}>
         <h5>prefabricated panel</h5>
         <Accordion>
           <Panel header="More" eventKey="4">
@@ -116,26 +116,26 @@ class App extends Component {
       </Thumbnail>
     </Col>
     <Col xs={6} md={2}>
-      <Thumbnail src={require("./HVAC_4.jpg")}>
+      <Thumbnail src={require('./HVAC_4.jpg')}>
         <h5>Heatpump</h5>
         <Accordion>
           <Panel header="More" eventKey="5">
              Transfers heat energy from a source of heat to a destination
           </Panel>
-        </Accordion>  
+        </Accordion>
         <p>
           <Checkbox inline></Checkbox>
         </p>
       </Thumbnail>
     </Col>
     <Col xs={6} md={2}>
-      <Thumbnail src={require("./Heatpump.JPG")}>
+      <Thumbnail src={require('./Heatpump.JPG')}>
         <h5>Heatpump</h5>
         <Accordion>
           <Panel header="More" eventKey="6">
              Transfers heat energy from a source of heat to a destination
           </Panel>
-        </Accordion>  
+        </Accordion>
         <p>
           <Checkbox inline></Checkbox>
         </p>
@@ -144,13 +144,13 @@ class App extends Component {
     <Col xs={6} md={2}>
        <LinkContainer to="/Data_Screen">
           <Button id="calculation">Start Calculation</Button>
-      </LinkContainer>    
+      </LinkContainer>
     </Col>
     </Row>
     <hr id="line"/>
   </Grid>
- 
- <div className="container-fluid"> 
+
+ <div className="container-fluid">
   <Row>
         <Col  md={4} lg={5}>
           <a className="sketchfab-embed-wrapper">
@@ -163,10 +163,10 @@ class App extends Component {
                     <h3>Renovation Costs</h3>
                       <Line />
                     <h3>Life cycle Costs</h3>
-                      <Bar />   
+                      <Bar />
           </a>
         </Col>
-        <Col  md={4} lg={4}> 
+        <Col  md={4} lg={4}>
           <a className="services">
                   <h1>Your Project</h1>
                     <h3>Renovation Costs</h3>
@@ -175,7 +175,7 @@ class App extends Component {
                       <Scatter />
           </a>
         </Col>
-  </Row> 
+  </Row>
  </div>
 
           <footer>
@@ -201,12 +201,12 @@ class App extends Component {
 
 
 ReactDOM.render(
- 
+
   <BrowserRouter>
-    <div> 
+    <div>
   <Route exact path="/" component={App} />
   <Route path="/Data_Screen" component ={Data_Screen} />
   </div>
-</BrowserRouter>, 
+</BrowserRouter>,
   document.getElementById('root')
 );

@@ -14,7 +14,7 @@ import Bar from './diagrams/bar_2.jsx';
 import Donut from './diagrams/donut_2.jsx';
 import pieTest from './data/pieTest_2.json';
 import Scatter from './diagrams/Scatter_2.jsx';
-import { Button, Jumbotron, Panel, Grid, Row, Col, Table, Image, Thumbnail, Checkbox, PanelGroup, Accordion } from 'react-bootstrap'; 
+import { Button, Jumbotron, Panel, Grid, Row, Col, Table, Image, Thumbnail, Checkbox, PanelGroup, Accordion } from 'react-bootstrap';
 
 
 class Data_Screen extends React.Component{
@@ -32,7 +32,7 @@ class Data_Screen extends React.Component{
 
   handleSelect(activeKey) {
     this.setState({ activeKey });
-  }  
+  }
 
   render (){
     return(
@@ -47,11 +47,11 @@ class Data_Screen extends React.Component{
           </Panel>
         </Accordion>
       </Jumbotron>
-     
+
    <Grid>
     <Row>
     <Col xs={6} md={2}>
-      <Thumbnail src={require("./Casement.JPG")}>
+      <Thumbnail src={require('./Casement.jpg')}>
         <h5>smart window</h5>
           <Accordion>
             <Panel header="More" eventKey="2">
@@ -64,7 +64,7 @@ class Data_Screen extends React.Component{
       </Thumbnail>
     </Col>
     <Col xs={6} md={2}>
-      <Thumbnail src={require("./HVAC.jpg")}>
+      <Thumbnail src={require('./HVAC.JPG')}>
         <h5>Prefab HVAC system</h5>
         <Accordion>
           <Panel header="More" eventKey="3">
@@ -77,7 +77,7 @@ class Data_Screen extends React.Component{
       </Thumbnail>
     </Col>
     <Col xs={6} md={2}>
-      <Thumbnail src={require("./easy_panel.jpg")}>
+      <Thumbnail src={require('./easy_panel.jpg')}>
         <h5>prefabricated panel</h5>
         <Accordion>
           <Panel header="More" eventKey="4">
@@ -90,26 +90,26 @@ class Data_Screen extends React.Component{
       </Thumbnail>
     </Col>
     <Col xs={6} md={2}>
-      <Thumbnail src={require("./HVAC_4.jpg")}>
+      <Thumbnail src={require('./HVAC_4.jpg')}>
         <h5>Heatpump</h5>
         <Accordion>
           <Panel header="More" eventKey="5">
              Transfers heat energy from a source of heat to a destination
           </Panel>
-        </Accordion>  
+        </Accordion>
         <p>
           <Checkbox inline></Checkbox>
         </p>
       </Thumbnail>
     </Col>
     <Col xs={6} md={2}>
-      <Thumbnail src={require("./Heatpump.JPG")}>
+      <Thumbnail src={require('./Heatpump.JPG')}>
         <h5>Heatpump</h5>
         <Accordion>
           <Panel header="More" eventKey="6">
              Transfers heat energy from a source of heat to a destination
           </Panel>
-        </Accordion>  
+        </Accordion>
         <p>
           <Checkbox inline></Checkbox>
         </p>
@@ -118,13 +118,13 @@ class Data_Screen extends React.Component{
     <Col xs={6} md={2}>
        <LinkContainer to="/About_Screen">
           <Button id="calculation">Start Calculation</Button>
-      </LinkContainer>    
+      </LinkContainer>
     </Col>
     </Row>
     <hr id="line"/>
   </Grid>
-  
-   <div className="container-fluid"> 
+
+   <div className="container-fluid">
   <Row>
         <Col  md={4} lg={5}>
           <a className="sketchfab-embed-wrapper">
@@ -137,10 +137,10 @@ class Data_Screen extends React.Component{
                     <h3>Renovation Costs</h3>
                       <Line />
                     <h3>Life cycle Costs</h3>
-                      <Bar />   
+                      <Bar />
           </a>
         </Col>
-        <Col  md={4} lg={4}> 
+        <Col  md={4} lg={4}>
           <a className="services">
                   <h1>Your Project</h1>
                     <h3>Renovation Costs</h3>
@@ -149,7 +149,7 @@ class Data_Screen extends React.Component{
                       <Scatter />
           </a>
         </Col>
-  </Row> 
+  </Row>
  </div>
 
           <footer>
@@ -170,7 +170,7 @@ class Data_Screen extends React.Component{
         </footer>
       </div>
     )
-  } 
+  }
 }
 
 
