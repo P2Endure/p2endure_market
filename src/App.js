@@ -38,28 +38,6 @@ class App extends Component {
 
   render(){
 
-    //var screenIndex = 2;
-    //var ActiveScreen
-    //var reader = new FileReader();
-    //var outputElement = document.getElementById('output');
-
-    /*document.getElementById("file-field").onChange=
-
-    function(){
-      reader.readAsText(this.files[0]);
-      reader.onload = function(e){
-        var fileText = e.target.result;
-        var parser = new DxfParser();
-        var dxf = null;
-        try {
-						dxf = parser.parseSync(fileText);
-					} catch(err) {
-						return console.error(err.stack);
-					}
-					console.log('Success!');
-					outputElement.innerHTML = JSON.stringify(dxf, null, 4);
-				};
-    };*/
     return(
 
   <div className="app">
@@ -108,7 +86,7 @@ class App extends Component {
         <Accordion>
           <Panel header="More" eventKey="4">
            Hier Text!!!
-        </Panel>
+          </Panel>
         </Accordion>
         <p>
           <Checkbox inline></Checkbox>
