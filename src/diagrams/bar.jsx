@@ -1,6 +1,7 @@
-import { Button, Jumbotron, Panel, Grid, Row, Col, Table, Image, Thumbnail, Checkbox } from 'react-bootstrap'; 
-import props from 'react';
+import { Button, Jumbotron, Panel, Grid, Row, Col, Table, Image, Thumbnail, Checkbox, PanelGroup, Accordion} from 'react-bootstrap';
 
+//var all = require('../data/barTest_2.json');
+// var filter = require('../data/barTest.json');
 
 var React = require('react');
 var ReactDOM = require('react-dom');
@@ -10,7 +11,8 @@ export default class Bar extends React.Component{
 
 constructor(props) {
     super(props);
-    this.state = { chartData: require('../data/barTest.json'),
+    this.handleClick = this.handleClick.bind(this);
+    this.state = { chartData: require('../data/barTest_2.json'),
       chartSeries: [
                     {
                       field: 'EnergySaving',
@@ -25,12 +27,21 @@ constructor(props) {
                       width: 400,
                       height: 300,
                       title: "Bar Chart",
-              }; 
-} 
+              };
+}
 
-                
+handleClick() {
+    this.setState(prevState => ({
+      chartData: require('../data/barTest.json')
+    }));
+  }
+
  render() {
-      return ( 
+      return (
+    <div>    
+    <Button onClick ={this.handleClick}>
+      {this.setState ? 'Start Calculation' : 'Start new calculation'}
+    </Button>    
     <BarChart
       title= {this.state.title}
       data= {this.state.chartData}
@@ -42,6 +53,7 @@ constructor(props) {
       xScale= {this.state.xScale}
       //yTicks= {this.state.yTicks}
       yLabel = {this.state.yLabel}
-/>);
+      />
+      </div>);
       }
 }

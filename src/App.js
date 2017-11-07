@@ -21,23 +21,20 @@ import { Button, Jumbotron, Panel, Grid, Row, Col, Table, Image, Thumbnail, Chec
 
 class App extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {isToggleOn: require('./data/barTest.json')};
+  constructor(props){
+    super(props)
+    this.state = {};
+    }
 
-    // important to make this work in the callback
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick() {
-    this.setState(prevState => ({
-      isToggleOn: !prevState.isToggleOn
-    }));
-  }
-
-  // handleSelect(activeKey) {
-  //   this.setState({ activeKey });
-  // }
+    getInitialState() {
+      return {
+        activeKey: '1'
+      };
+    }
+  
+    handleSelect(activeKey) {
+      this.setState({ activeKey });
+    }
 
   render(){
 
@@ -123,11 +120,9 @@ class App extends Component {
       </Thumbnail>
     </Col>
     <Col xs={6} md={2}>
-       
-          <Button onClick={this.handleClick}>
-             {this.state.isToggleOn ? 'Start Calculation' : 'Start new calculation'}
-          </Button>
-      
+      <LinkContainer to="/Data_Screen">
+        <Button id="calculation">Start Calculation</Button>
+      </LinkContainer>
     </Col>
     </Row>
     <hr id="line"/>
