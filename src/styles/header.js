@@ -48,7 +48,7 @@ var NavMenu = React.createClass({
     var links = this.props.links.map(function(link) {
       if (link.dropdown) {
         return (
-          <NavLinkDropdown
+          <NavLinkDropdown key={1}
             links={link.links}
             text={link.text}
             active={link.active}

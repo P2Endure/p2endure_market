@@ -20,7 +20,7 @@ constructor(props) {
                      }
                     ],
                 x: function(d) { return d.case; },
-                    	xScale: 'ordinal',
+                    	//xScale: 'ordinal',
                       xLabel: "Case",
                       yLabel: "EnergySaving",
                       //yTicks: [10, "%"],

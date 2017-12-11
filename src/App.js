@@ -17,6 +17,7 @@ import Donut from './diagrams/donut.jsx';
 import pieTest from './data/pieTest.json';
 import Scatter from './diagrams/Scatter.jsx';
 import { Button, Jumbotron, Panel, Grid, Row, Col, Table, Image, Thumbnail, Checkbox, PanelGroup, Accordion} from 'react-bootstrap';
+import {onClick} from './diagrams/bar.jsx';
 //import './node_modules/dxf-parser/lib/DxfParser.js'
 
 class App extends Component {
@@ -36,13 +37,14 @@ class App extends Component {
       this.setState({ activeKey });
     }
 
+
   render(){
 
   return(
 
   <div className="app">
     <div id="navbar"></div>
-     <Jumbotron id="jumbo" fluid>
+     <Jumbotron id="jumbo">
               {this.props.children}
         <h3>Welcome to the</h3> <h1>P2Endure E-Marketplace</h1>
         <Accordion>
@@ -51,7 +53,6 @@ class App extends Component {
           </Panel>
         </Accordion>
       </Jumbotron>
-
    <Grid>
     <Row>
     <Col xs={6} md={2}>
@@ -120,9 +121,9 @@ class App extends Component {
       </Thumbnail>
     </Col>
     <Col xs={6} md={2}>
-      <LinkContainer to="/Data_Screen">
-        <Button id="calculation">Start Calculation</Button>
-      </LinkContainer>
+     
+        <Button onClick={this.handleClick}>Start Calculation</Button>
+      
     </Col>
     </Row>
     <hr id="line"/>
