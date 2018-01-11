@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Button, Jumbotron, Panel, Grid, Row, Col, Table, Image, Thumbnail, Checkbox } from 'react-bootstrap'; 
 
 // create classes
+
 var NavBar = React.createClass({
   render: function() {
     return (

@@ -3,7 +3,7 @@ var ReactDOM = require('react-dom');
 var PieChart = require('react-d3-basic').PieChart;
 
 (function() {
-  var generalChartData = require('./pieTest_2.json')
+  var generalChartData = require('./data/pieTest_2.json')
 
   var width = 400,
     height = 300,
