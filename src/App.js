@@ -13,6 +13,8 @@ import Products from './styles/components/productBar.js';
 import Model from './model/model.js';
 import Diagram from './model/diagram.js';
 
+import MainContent from './MainContent';
+
 import img from  'react';
 import src from 'react';
 import Data_Screen from './Data_Screen.js';
@@ -21,7 +23,94 @@ import { Button, Jumbotron, Panel, Grid, Row, Col, Table, Image, Thumbnail, Chec
 
 class App extends Component {
 
+  state = {
+    isFiltered: false,
+    pendingProducts: "",
+    products: []
+  };
+  
+  lastProductId = 0;
+  
+  newProductId = () => {
+    const id = this.lastProductId;
+    this.lastProductId += 1;
+    return id;
+  };
+  
+  toggleProductProperty = (property, id) =>
+  this.setState({
+    products: this.state.products.map(product => {
+      if (id === product.id) {
+        return {
+          ...product,
+          [property]: !product[property]
+        };
+      }
+      return product;
+    })
+  });
+
+  toggleConfirmation = id =>
+  this.toggleProductProperty("isConfirmed", id);
+
+  removeProduct = id =>
+  this.setState({
+    products: this.state.products.filter(product => id !== product.id)
+  });
+
+  toggleEditing = id =>
+  this.toggleProductProperty("isEditing", id);
+
+  setName = (name, id) =>
+  this.setState({
+    products: this.state.products.map(product => {
+      if (id === product.id) {
+        return {
+          ...product,
+          name
+        };
+      }
+      return product;
+    })
+  });
+
+  toggleFilter = () =>
+  this.setState({ isFiltered: !this.state.isFiltered });
+
+  handleNameInput = e =>
+  this.setState({ pendingProduct: e.target.value });
+
+  newProductSubmitHandler = e => {
+    e.preventDefault();
+    const id = this.newProductId();
+    this.setState({
+      products: [
+        {
+          name: this.state.pendingProduct,
+          isConfirmed: false,
+          isEditing: false,
+          id
+        },
+        ...this.state.products
+      ],
+      pendingProduct: ''
+    });
+  }
+
+  getTotalShown = () => this.state.products.length;
+
+  getAttendingProducts = () =>
+    this.state.products.reduce(
+      (total, product) => product.isConfirmed ? total + 1 : total,
+      0
+    );
+
 render(){
+
+  const totalProductListed = this.getTotalShown();
+  const numberAttending = this.getAttendingProducts();
+  const numberUnconfirmed = totalProductListed - numberAttending;
+
   return( 
     <div className="app">
       <Jumbo/>

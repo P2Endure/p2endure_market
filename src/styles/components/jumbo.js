@@ -35,8 +35,4 @@ render(){
     )}    
 };
 
-
-
-
-
 export default Jumbo;
