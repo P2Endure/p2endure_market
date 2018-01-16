@@ -32,3 +32,5 @@ Product.propTypes ={
     setName: PropTypes.func.isRequired,
     handleRemove: PropTypes.func.isRequired
 };  
+
+export default Product;
