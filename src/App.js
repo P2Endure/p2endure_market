@@ -114,7 +114,26 @@ render(){
   return( 
     <div className="app">
       <Jumbo/>
-      <Products/>  
+      <div className="App">
+      <Products
+          newProductSubmitHandler={this.newProductSubmitHandler}
+          pendingProduct={this.state.pendingProduct}
+          handleNameInput={this.handleNameInput}
+        />
+      <MainContent
+          toggleFilter={this.toggleFilter}
+          isFiltered={this.state.isFiltered}
+          totalProductListed={totalProductListed}
+          numberAttending={numberAttending}
+          numberUnconfirmed={numberUnconfirmed}
+          products={this.state.products}
+          toggleConfirmation={this.toggleConfirmation}
+          toggleEditing={this.toggleEditing}
+          setName={this.setName}
+          removeProduct={this.removeGuest}
+          pendingProduct={this.state.pendingProducts}
+        />
+      </div>  
     <div className="container-fluid">
       <Row>
         <Col  md={4} lg={5}>
