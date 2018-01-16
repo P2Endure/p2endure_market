@@ -6,8 +6,8 @@ import PendingProduct from './PendingProduct';
 
 const ProductList = props =>
   <ul>
-    <PendingProducts name={props.pendingProduct} />
-    {props.productss
+    <PendingProduct name={props.pendingProduct} />
+    {props.products
       .filter(product => !props.isFiltered || product.isConfirmed)
       .map((product, index) =>
         <Product
