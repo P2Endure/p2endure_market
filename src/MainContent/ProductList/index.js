@@ -16,9 +16,9 @@ const ProductList = props =>
           isConfirmed={product.isConfirmed}
           isEditing={product.isEditing}
           handleConfirmation={() => props.toggleConfirmation(product.id)}
-          handeToggleEditing={() => props.toggleEditing(product.id)}
+          handleToggleEditing={() => props.toggleEditing(product.id)}
           setName={text => props.setName(text, product.id)}
-          handleRemove={() => props.removeProducts(product.id)} />
+          handleRemove={() => props.removeProduct(product.id)} />
       )}
   </ul>;
 
