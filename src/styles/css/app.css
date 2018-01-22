@@ -15,18 +15,13 @@
   margin-bottom: 5px;
 }
 
+
 .table h1, h2{
   color: black;
 } 
 
 .services h3{
   color: #585858;
-}
-
-* {
-  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;  /* Firefox, other Gecko */
-  box-sizing: border-box;    /* Opera/IE 8+ */
 }
 
 #line{
@@ -118,3 +113,4 @@ footer p {
 footer a {
   color: #ccc;
 }
+
