@@ -17,12 +17,12 @@ const MainContent = props =>
       numberUnconfirmed={props.numberUnconfirmed} />
     <ProductList
       products={props.products}
-      toggleConfirmationAt={props.toggleConfirmationAt}
-      toggleEditingAt={props.toggleEditingAt}
-      setNameAt={props.setNameAt}
+      toggleConfirmation={props.toggleConfirmation}
+      toggleEditing={props.toggleEditing}
+      setName={props.setName}
       isFiltered={props.isFiltered}
-      removeProductsAt={props.removeProductsAt}
-      pendingProduct={props.pendingProducts}
+      removeProduct={props.removeProduct}
+      pendingProduct={props.pendingProduct}
     />
   </div>;
 
@@ -33,10 +33,10 @@ MainContent.propTypes = {
   numberAttending: PropTypes.number.isRequired,
   numberUnconfirmed: PropTypes.number.isRequired,
   products: PropTypes.array.isRequired,
-  toggleConfirmationAt: PropTypes.func.isRequired,
-  toggleEditingAt: PropTypes.func.isRequired,
-  setNameAt: PropTypes.func.isRequired,
-  removeProductAt: PropTypes.func.isRequired,
+  toggleConfirmation: PropTypes.func.isRequired,
+  toggleEditing: PropTypes.func.isRequired,
+  setName: PropTypes.func.isRequired,
+  removeProduct: PropTypes.func.isRequired,
   pendingProducts: PropTypes.string.isRequired
 };
 
