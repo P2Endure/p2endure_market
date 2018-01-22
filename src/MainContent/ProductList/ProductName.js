@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 const ProductName = props =>{
     if (props.isEditing){
         return(
-            <input type="text" 
+            <input 
+            type="text" 
             value={props.children}
-            onChange={props.handleNameEdits}
             onChange={props.handleNameEdits}
             />
         );
