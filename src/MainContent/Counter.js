@@ -23,7 +23,7 @@ const Counter = props =>
 Counter.PropTypes={
     numberAttending: PropTypes.number,
     numberUnconfirmed: PropTypes.number,
-    totalProductListed: PropTypes.number,
+    totalProductListed: PropTypes.number
 };
 
 export default Counter;
