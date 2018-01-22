@@ -6,7 +6,8 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import './styles/css/app.css';
 import './styles/css/responsive.css';
 
-import NavBar from './styles/components/header.js';
+import NavBar from './styles/components/NavBar.js';
+import Header from './styles/components/index.js';
 import Jumbo from './styles/components/jumbo.js';
 import Footer from './styles/components/footer.js';
 import Products from './styles/components/productBar.js';
@@ -25,7 +26,7 @@ class App extends Component {
 
   state = {
     isFiltered: false,
-    pendingProducts: "",
+    pendingProduct: "",
     products: []
   };
   
@@ -115,7 +116,7 @@ render(){
     <div className="app">
       <Jumbo/>
       <div className="App">
-      <Products
+      <Header
           newProductSubmitHandler={this.newProductSubmitHandler}
           pendingProduct={this.state.pendingProduct}
           handleNameInput={this.handleNameInput}
@@ -130,8 +131,8 @@ render(){
           toggleConfirmation={this.toggleConfirmation}
           toggleEditing={this.toggleEditing}
           setName={this.setName}
-          removeProduct={this.removeGuest}
-          pendingProduct={this.state.pendingProducts}
+          removeProduct={this.removeProduct}
+          pendingProduct={this.state.pendingProduct}
         />
       </div>  
     <div className="container-fluid">
