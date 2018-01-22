@@ -15,7 +15,7 @@ const PendingProduct = props => {
 };
 
 PendingProduct.propTypes ={
-    name: PropTypes.string.isRequire
+    name: PropTypes.string.isRequired
 };   
 
 export default PendingProduct;
