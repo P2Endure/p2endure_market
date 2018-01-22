@@ -6,12 +6,14 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import './styles/css/app.css';
 import './styles/css/responsive.css';
 
-import NavBar from './styles/components/header.js';
+import NavBar from './styles/components/NavBar.js';
 import Jumbo from './styles/components/jumbo.js';
 import Footer from './styles/components/footer.js';
 import Products from './styles/components/productBar.js';
 import Model from './model/model.js';
 import Diagram from './model/diagram.js';
+
+import MainContent from './MainContent';
 
 import img from  'react';
 import src from 'react';
