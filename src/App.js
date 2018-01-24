@@ -115,6 +115,7 @@ render(){
   return( 
     <div className="app">
       <Jumbo/>
+      <Products/>
       <div className="App">
       <Header
           newProductSubmitHandler={this.newProductSubmitHandler}

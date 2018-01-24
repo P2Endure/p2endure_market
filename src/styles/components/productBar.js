@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import header from './NavBar.js';
 import PropTypes from 'prop-types';
-
-import ProductInputForm from './ProductInputForm.js';
 
 import { Button, Jumbotron, Panel, Grid, Row, Col, Table, Image, Thumbnail, Checkbox, PanelGroup, Accordion} from 'react-bootstrap';
 
@@ -78,7 +75,6 @@ const Products = props =>
     <Col xs={6} md={2}>
         <Button>Start Calculation</Button> 
     </Col>
-    <ProductInputForm />
     </Row>
     <hr id="line"/>
 </Grid> 
