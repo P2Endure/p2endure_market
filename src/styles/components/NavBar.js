@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Button, Jumbotron, Panel, Grid, Row, Col, Table, Image, Thumbnail, Checkbox } from 'react-bootstrap'; 
-
-// create classes
+import index from './index';
 
 var NavBar = React.createClass({
   render: function() {
@@ -46,10 +45,11 @@ var NavBrand = React.createClass({
 
 var NavMenu = React.createClass({
   render: function() {
-    var links = this.props.links.map(function(link) {
+    var links = this.props.links.map(function(link, index) {
       if (link.dropdown) {
         return (
-          <NavLinkDropdown key={1}
+          <NavLinkDropdown 
+            key={index}
             links={link.links}
             text={link.text}
             active={link.active}
@@ -57,7 +57,11 @@ var NavMenu = React.createClass({
         );
       } else {
         return (
-          <NavLink linkTo={link.linkTo} text={link.text} active={link.active} />
+          <NavLink
+            key={index} 
+            linkTo={link.linkTo} 
+            text={link.text} 
+            active={link.active} />
         );
       }
     });
@@ -72,12 +76,16 @@ var NavMenu = React.createClass({
 var NavLinkDropdown = React.createClass({
   render: function() {
     var active = false;
-    var links = this.props.links.map(function(link) {
+    var links = this.props.links.map(function(link, index) {
       if (link.active) {
         active = true;
       }
       return (
-        <NavLink linkTo={link.linkTo} text={link.text} active={link.active} />
+        <NavLink
+          key={index} 
+          linkTo={link.linkTo} 
+          text={link.text} 
+          active={link.active} />
       );
     });
     return (
