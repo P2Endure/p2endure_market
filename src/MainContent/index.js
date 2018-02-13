@@ -37,7 +37,7 @@ MainContent.propTypes = {
   toggleEditing: PropTypes.func.isRequired,
   setName: PropTypes.func.isRequired,
   removeProduct: PropTypes.func.isRequired,
-  pendingProducts: PropTypes.string.isRequired
+  pendingProduct: PropTypes.string.isRequired
 };
 
 export default MainContent;
