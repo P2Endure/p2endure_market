@@ -15,6 +15,10 @@
   margin-bottom: 5px;
 }
 
+.thumbnail img {
+  height:120px;
+  width:100px;
+}
 
 .table h1, h2{
   color: black;
@@ -113,4 +117,3 @@ footer p {
 footer a {
   color: #ccc;
 }
-
