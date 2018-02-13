@@ -1,5 +1,4 @@
 import { Button, Jumbotron, Panel, Grid, Row, Col, Table, Image, Thumbnail, Checkbox, PanelGroup, Accordion} from 'react-bootstrap';
-
 //var all = require('../data/barTest_2.json');
 // var filter = require('../data/barTest.json');
 
@@ -12,11 +11,13 @@ export default class Bar extends React.Component{
 constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
-    this.state = { chartData: require('../data/barTest_2.json'),
+    this.state = { 
+      chartData: require('../data/barTest_2.json'),
       chartSeries: [
                     {
                       field: 'EnergySaving',
-                      name: 'EnergySaving'
+                      name: 'EnergySaving',
+                      categoricalColors: '#A07A19',
                      }
                     ],
                 x: function(d) { return d.case; },
