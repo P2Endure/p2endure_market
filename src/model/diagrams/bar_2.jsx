@@ -1,59 +1,48 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
+import {BarChart} from 'react-d3-basic';
+import ChartSeries from './chartSeries.js';
 import { Button, Jumbotron, Panel, Grid, Row, Col, Table, Image, Thumbnail, Checkbox, PanelGroup, Accordion} from 'react-bootstrap';
+import XValue from './XValue';
 
-//var all = require('../data/barTest_2.json');
-// var filter = require('../data/barTest.json');
+class Bar extends React.Component{ 
 
-var React = require('react');
-var ReactDOM = require('react-dom');
-var BarChart = require('react-d3-basic').BarChart;
+  render(){
+    var chartData = require ('../data/barTest_2.json');
+    var chartSeries = [
+                      {
+                        field: 'EnergySaving',
+                        name: 'EnergySaving',
+                        categoricalColors: '#A07A19',
+                      }
+                      ];
+    var x = function(d) { return d.case; };
+    var xScale = 'ordinal';
+    var xLabel = "Case";
+    var yLabel = 'EnergySaving';
+    //var yTicks = [10, "%"];
+    var width = 400;
+    var height = 300;
+    var title = 'Bar Chart';
 
-export default class Bar extends React.Component{ 
-
-constructor(props) {
-    super(props);
-    this.handleClick = this.handleClick.bind(this);
-    this.state = { chartData: require('../data/barTest_2.json'),
-      chartSeries: [
-                    {
-                      field: 'EnergySaving',
-                      name: 'EnergySaving'
-                     }
-                    ],
-                x: function(d) { return d.case; },
-                    	//xScale: 'ordinal',
-                      xLabel: "Case",
-                      yLabel: "EnergySaving",
-                      //yTicks: [10, "%"],
-                      width: 400,
-                      height: 300,
-                      title: "Bar Chart",
-              };
-}
-
-handleClick() {
-    this.setState(prevState => ({
-      chartData: require('../data/barTest.json')
-    }));
-  }
-
- render() {
-      return (
+return (
     <div>    
-    <Button onClick ={this.handleClick}>
-      {this.setState ? 'Start Calculation' : 'Start new calculation'}
-    </Button>    
-    <BarChart
-      title= {this.state.title}
-      data= {this.state.chartData}
-      width= {this.state.width}
-      height= {this.state.height}
-      chartSeries = {this.state.chartSeries}
-      x= {this.state.x}
-      xLabel= {this.state.xLabel}
-      xScale= {this.state.xScale}
-      //yTicks= {this.state.yTicks}
-      yLabel = {this.state.yLabel}
-      />
-      </div>);
-      }
+        <BarChart
+          title= {this.title}
+          data= {this.chartData}
+          width= {this.width}
+          height= {this.height}
+          chartSeries = {this.chartSeries}
+          x= {this.x}
+          xLabel= {this.xLabel}
+          xScale= {this.xScale}
+          //yTicks= {this.yTicks}
+          yLabel = {this.yLabel}
+          />
+    </div>
+    );
+  };
 }
+
+export default Bar;
