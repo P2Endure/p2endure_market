@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
 
-import { Button, Jumbotron, Panel, Grid, Row, Col, Table, Image, Thumbnail, Checkbox, PanelGroup, Accordion} from 'react-bootstrap';
+import { Button, Jumbotron, Panel, Grid, Row, Col, Table, Image, Thumbnail, Checkbox, PanelGroup, Accordion } from 'react-bootstrap';
+import {LinkContainer} from 'react-router-bootstrap';
 
 const Products = props =>
 <Grid>
-    <Row>
+  <Row>
     <Col xs={6} md={2}>
-      <Thumbnail src={require('./img/Casement.jpg')}>
+      <Thumbnail className="thumnail" src={require('./img/Casement.jpg')} >
         <h5>smart window</h5>
           <Accordion>
             <Panel header="More" eventKey="2">
@@ -34,7 +34,7 @@ const Products = props =>
       </Thumbnail>
     </Col>
     <Col xs={6} md={2}>
-      <Thumbnail src={require('./img/easy_panel.jpg')}>
+      <Thumbnail src={require('./img/easy_panel.jpg')} alt="242x200">
         <h5>prefabricated panel</h5>
         <Accordion>
           <Panel header="More" eventKey="4">
@@ -73,10 +73,12 @@ const Products = props =>
       </Thumbnail>
     </Col>
     <Col xs={6} md={2}>
-        <Button>Start Calculation</Button> 
+      <LinkContainer to="/Data_Screen">
+       <Button id="calculation">Start Calculation</Button>
+      </LinkContainer> 
     </Col>
-    </Row>
-    <hr id="line"/>
+  </Row>
+ <hr id="line"/>
 </Grid> 
 
 export default Products;
