@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-
+import Bootstrap from  'react-bootstrap';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 import './styles/css/app.css';
@@ -20,103 +20,104 @@ import img from  'react';
 import src from 'react';
 import Data_Screen from './Data_Screen.js';
 
-import { Button, Jumbotron, Panel, Grid, Row, Col, Table, Image, Thumbnail, Checkbox, PanelGroup, Accordion} from 'react-bootstrap';
+import { Button, Jumbotron, Panel, Grid, Row, Col, Table, Image, Thumbnail, Checkbox, PanelGroup, Accordion, Navbar} from 'react-bootstrap';
 
 class App extends Component {
 
-  state = {
-    isFiltered: false,
-    pendingProduct: "",
-    products: []
-  };
+  // state = {
+  //   isFiltered: false,
+  //   pendingProduct: "",
+  //   products: []
+  // };
   
-  lastProductId = 0;
+  // lastProductId = 0;
   
-  newProductId = () => {
-    const id = this.lastProductId;
-    this.lastProductId += 1;
-    return id;
-  };
+  // newProductId = () => {
+  //   const id = this.lastProductId;
+  //   this.lastProductId += 1;
+  //   return id;
+  // };
   
-  toggleProductProperty = (property, id) =>
-  this.setState({
-    products: this.state.products.map(product => {
-      if (id === product.id) {
-        return {
-          ...product,
-          [property]: !product[property]
-        };
-      }
-      return product;
-    })
-  });
+  // toggleProductProperty = (property, id) =>
+  // this.setState({
+  //   products: this.state.products.map(product => {
+  //     if (id === product.id) {
+  //       return {
+  //         ...product,
+  //         [property]: !product[property]
+  //       };
+  //     }
+  //     return product;
+  //   })
+  // });
 
-  toggleConfirmation = id =>
-  this.toggleProductProperty("isConfirmed", id);
+  // toggleConfirmation = id =>
+  // this.toggleProductProperty("isConfirmed", id);
 
-  removeProduct = id =>
-  this.setState({
-    products: this.state.products.filter(product => id !== product.id)
-  });
+  // removeProduct = id =>
+  // this.setState({
+  //   products: this.state.products.filter(product => id !== product.id)
+  // });
 
-  toggleEditing = id =>
-  this.toggleProductProperty("isEditing", id);
+  // toggleEditing = id =>
+  // this.toggleProductProperty("isEditing", id);
 
-  setName = (name, id) =>
-  this.setState({
-    products: this.state.products.map(product => {
-      if (id === product.id) {
-        return {
-          ...product,
-          name
-        };
-      }
-      return product;
-    })
-  });
+  // setName = (name, id) =>
+  // this.setState({
+  //   products: this.state.products.map(product => {
+  //     if (id === product.id) {
+  //       return {
+  //         ...product,
+  //         name
+  //       };
+  //     }
+  //     return product;
+  //   })
+  // });
 
-  toggleFilter = () =>
-  this.setState({ isFiltered: !this.state.isFiltered });
+  // toggleFilter = () =>
+  // this.setState({ isFiltered: !this.state.isFiltered });
 
-  handleNameInput = e =>
-  this.setState({ pendingProduct: e.target.value });
+  // handleNameInput = e =>
+  // this.setState({ pendingProduct: e.target.value });
 
-  newProductSubmitHandler = e => {
-    e.preventDefault();
-    const id = this.newProductId();
-    this.setState({
-      products: [
-        {
-          name: this.state.pendingProduct,
-          isConfirmed: false,
-          isEditing: false,
-          id
-        },
-        ...this.state.products
-      ],
-      pendingProduct: ''
-    });
-  }
+  // newProductSubmitHandler = e => {
+  //   e.preventDefault();
+  //   const id = this.newProductId();
+  //   this.setState({
+  //     products: [
+  //       {
+  //         name: this.state.pendingProduct,
+  //         isConfirmed: false,
+  //         isEditing: false,
+  //         id
+  //       },
+  //       ...this.state.products
+  //     ],
+  //     pendingProduct: ''
+  //   });
+  // }
 
-  getTotalShown = () => this.state.products.length;
+  // getTotalShown = () => this.state.products.length;
 
-  getAttendingProducts = () =>
-    this.state.products.reduce(
-      (total, product) => product.isConfirmed ? total + 1 : total,
-      0
-    );
+  // getAttendingProducts = () =>
+  //   this.state.products.reduce(
+  //     (total, product) => product.isConfirmed ? total + 1 : total,
+  //     0
+  //   );
 
 render(){
 
-  const totalProductListed = this.getTotalShown();
-  const numberAttending = this.getAttendingProducts();
-  const numberUnconfirmed = totalProductListed - numberAttending;
+  // const totalProductListed = this.getTotalShown();
+  // const numberAttending = this.getAttendingProducts();
+  // const numberUnconfirmed = totalProductListed - numberAttending;
 
   return( 
-    <div className="app">
+    <div className="App">
+      <NavBar/>
       <Jumbo/>
       <Products/>
-      <div className="App">
+      {/* <div className="App">
       <Header
           newProductSubmitHandler={this.newProductSubmitHandler}
           pendingProduct={this.state.pendingProduct}
@@ -135,12 +136,12 @@ render(){
           removeProduct={this.removeProduct}
           pendingProduct={this.state.pendingProduct}
         />
-      </div>  
+      </div>   */}
     <div className="container-fluid">
       <Row>
         <Col  md={4} lg={5}>
           <Model/>
-        </Col>
+        </Col >
           <Diagram/>            
       </Row>
     </div>;
