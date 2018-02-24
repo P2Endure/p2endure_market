@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import Bootstrap from  'react-bootstrap';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 import './styles/css/app.css';
@@ -8,6 +7,7 @@ import './styles/css/responsive.css';
 
 import NavBar from './styles/components/NavBar.js';
 import Header from './styles/components/index.js';
+import Sidebar from './styles/components/Sidebar.js';
 import Jumbo from './styles/components/jumbo.js';
 import Footer from './styles/components/footer.js';
 import Products from './styles/components/productBar.js';
@@ -115,6 +115,7 @@ render(){
   return( 
     <div className="App">
       <NavBar/>
+      <Sidebar/>
       <Jumbo/>
       <Products/>
       {/* <div className="App">
