@@ -24,10 +24,6 @@
   color: black;
 } 
 
-.services h3{
-  color: #585858;
-}
-
 #line{
   border-top: 1.5px solid wheat;
 }
@@ -102,8 +98,6 @@ Sidebar navigation
 Layout for diagramms and for the
 sketchfab-model
 *********************************/
-
-
 h1, h2{
   color: darkgrey;
 }
@@ -128,6 +122,18 @@ h4.panel-title{
 .panel-default > .panel-heading panels.less + .panel-collapse > .panel-body{
   border-top-color: wheat;
   width:1580px;
+}
+
+.panel{
+  border-color: #ddd;
+  border-style: solid;
+  border-radius: 4px;
+  margin-top: 5px;
+}
+
+.panel-inlay{
+  background-color: #F5F5F5;
+  border-bottom: 2px solid #ddd
 }
 
 /*********************************

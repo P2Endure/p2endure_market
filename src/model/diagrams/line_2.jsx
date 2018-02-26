@@ -25,6 +25,10 @@ export default class Line extends React.Component {
  
     render() {
       return (
+      <div className="panel">
+        <div className="panel-inlay">
+         <h3>&#10066; Energy Costs</h3>
+        </div>   
         <LineChart
         legend ={true}
         width= {400}
@@ -32,7 +36,8 @@ export default class Line extends React.Component {
         data= {this.state.chartData}
         chartSeries= {this.state.chartSeries}
         x= {this.state.x}
-        />);
-      }
-
+        />
+      </div> 
+      );
+    }
 }

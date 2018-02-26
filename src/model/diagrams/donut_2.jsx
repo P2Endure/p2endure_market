@@ -34,6 +34,10 @@ constructor(props) {
 }
 render(){
   return (
+  <div className="panel">
+    <div className="panel-inlay">
+      <h3>&#10066; Single Costs</h3>
+    </div>
     <PieChart
       data= {this.state.generalChartData}
       width= {400}
@@ -42,6 +46,8 @@ render(){
       value = {this.state.value}
       name = {this.state.name}
       innerRadius = {this.state.innerRadius}
-      />);
+      />
+  </div>    
+      );
   } 
 }

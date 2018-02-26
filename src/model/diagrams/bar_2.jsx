@@ -27,7 +27,10 @@ class Bar extends React.Component{
     var title = 'Bar Chart';
 
 return (
-    <div>    
+    <div className="panel">
+      <div className="panel-inlay">
+        <h3>&#10066; Life cycle Costs</h3>
+      </div>    
         <BarChart
           title= {this.title}
           data= {this.chartData}

@@ -42,6 +42,10 @@ export default class Scatter extends React.Component {
 
 render(){
   return(
+    <div className="panel">
+      <div className="panel-inlay">
+        <h3>&#10066; Heating and Ventilation</h3>
+      </div>
       <ScatterPlot
       data= {this.state.chartData}
       width= {this.state.width}
@@ -50,6 +54,8 @@ render(){
       chartSeries= {this.state.chartSeries}
       x= {this.state.x}
       xScale= {this.state.xScale}
-    />);
+    />
+    </div>
+    );
   }
 }

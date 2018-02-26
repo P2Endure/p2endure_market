@@ -8,8 +8,6 @@ export default class Bar extends React.Component {
 
 constructor(props) {
     super(props);
-
-    this.handleClick = this.handleClick.bind(this);
     this.state = { chartData: require('../data/barTest_2.json'),
        chartSeries: [
                      {
@@ -29,32 +27,25 @@ constructor(props) {
                     title: "Bar Chart"
                 }
             }
-                handleClick() {
-                        this.setState(prevState => ({
-                          chartData: require('../data/barTest.json')
-                        }));
-                  };
-                    
-                    render() {
-                        
-                        return (
-                               <div>    
-                               <Button onClick ={this.handleClick}>
-                              {this.setState ? 'Start Calculation' : 'Start new calculation'}
-                                </Button>    
-                                 <BarChart
-                                   title= {this.state.title}
-                                   data= {this.state.chartData}
-                                   width= {this.state.width}
-                                   height= {this.state.height}
-                                   chartSeries = {this.state.chartSeries}
-                                   x= {this.state.x}
-                                   xLabel= {this.state.xLabel}
-                                   xScale= {this.state.xScale}
-                                   //yTicks= {this.state.yTicks}
-                                   yLabel = {this.state.yLabel}  
-                                   
-                                   />
-      </div>);
-       }
+
+render() { 
+ return (
+  <div className="panel">
+    <div className="panel-inlay">
+      <h3>&#10066; Life cycle Costs</h3>
+    </div>    
+    <BarChart
+      title= {this.state.title}
+      data= {this.state.chartData}
+      width= {this.state.width}
+      height= {this.state.height}
+      chartSeries = {this.state.chartSeries}
+      x= {this.state.x}
+      xLabel= {this.state.xLabel}
+      xScale= {this.state.xScale}
+      //yTicks= {this.state.yTicks}
+      yLabel = {this.state.yLabel}  
+      />
+  </div>);
+  }
 }

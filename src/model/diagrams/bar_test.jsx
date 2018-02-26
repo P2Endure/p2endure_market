@@ -8,8 +8,15 @@ import XValue from './XValue';
 
 class Bar extends React.Component{ 
 
+  handleClick() {
+    this.setState(prevState => ({
+      chartData: require('../data/barTest.json')
+    }));
+};
+
   render(){
     var chartData = require ('../data/barTest_2.json');
+    this.handleClick = this.handleClick.bind(this);
     var chartSeries = [
                       {
                         field: 'EnergySaving',
@@ -25,9 +32,13 @@ class Bar extends React.Component{
     var width = 400;
     var height = 300;
     var title = 'Bar Chart';
+    
 
 return (
-    <div>    
+    <div> 
+        <Button onClick ={this.handleClick}>
+          {this.setState ? 'Start Calculation' : 'Start new calculation'}
+        </Button>     
         <BarChart
           title= {title}
           data= {chartData}
