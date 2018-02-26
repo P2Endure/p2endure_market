@@ -2,8 +2,8 @@ This repository is the front end of the P2Endure e-marketplaces. In this front-e
 
 The software was created using React and Webpack.
 
-Demo
-Installation
+Demo Installation
+
 ####1. Clone this project or Download that ZIP file
 
 ####2. Make sure you have npm installed globally
