@@ -1,8 +1,10 @@
-.app {
+.App {
   position: relative;
- 
 }
 
+/*********************************
+Layout jumbotron
+*********************************/
 #jumbo {
     padding-top: 4px;
     padding-bottom: 4px;
@@ -20,10 +22,6 @@
   width:100px;
 }
 
-.table h1, h2{
-  color: black;
-} 
-
 #line{
   border-top: 1.5px solid wheat;
 }
@@ -37,17 +35,12 @@ body {
   font: inherit;
   vertical-align: baseline;
 }
-.container {
-  position: relative;
-  margin: 0 auto;
-  width: 94%;
-  max-width: 1100px;
-  font-family: helvetica, sans-serif;
-}
+
 .content {
   position: relative;
   padding-top: 80px;
 }
+
 .content p {
   margin-bottom: 10px;
 }
@@ -58,7 +51,9 @@ Header navigation
 #header {
   height: 60px;
   line-height: 80px;
-  background: #222;
+  background-color: #F8F8F8;
+  border-color: #ddd;
+  border-style: solid;
   color: white;
 }
 #header h1 {
@@ -88,10 +83,32 @@ Header navigation
 Sidebar navigation
 *********************************/
 .wrap {
-  width: 10%;
+  width: 15%;
   height: 1325px;
   float: left;
-  background: #192b3c;
+  border-color: #ddd;
+  border-style: solid;
+  background-color: #F8F8F8;
+}
+
+.wrap ul{
+  list-style-type: none;
+  position: relative;
+  display: block;
+  padding-left: 1px;
+}
+
+.wrap ul li{
+  margin-top: 5%;
+  margin-bottom: 5%;
+  border-bottom: 1px solid #e7e7e7;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: rgb(231, 231, 231);
+}
+
+.wrap ul li a{
+
 }
 
 /*********************************
@@ -108,7 +125,7 @@ h4.panel-title{
 
 .panel.panel-default{
   background-color: white;
-  border-bottom-color: wheat;
+  border-bottom-color: white;
   border-top-color: white;
   border-left-color: white;
   border-right-color: white;
@@ -142,6 +159,14 @@ Button
 
 #calculation{
   margin-top: 230px;
+}
+
+/*********************************
+SVG elements
+*********************************/
+
+.react-d3-core__container_svg{
+ 
 }
 
 /*********************************
