@@ -16,19 +16,21 @@ import { Button, Jumbotron, Panel, Grid, Row, Col, Table, Image, Thumbnail, Chec
 const Diagram = props => 
 <div>
     <Row>
-        <Col md={6} lg={6}>
-          <a>
-            <Line />
-            <Bar />   
-          </a>
+        <Col md={8} lg={8}>
+          <Bar />    
         </Col>
-        <Col md={6} lg={6}> 
-          <a>
-            <Donut />
-            <Scatter />
-          </a>
+        <Col md={4} lg={4}>
+         <Line />
         </Col>
-    </Row>    
+    </Row>
+    <Row>
+        <Col md={8} lg={4}>  
+          <Donut />
+        </Col>     
+        <Col md={4} lg={8}> 
+          <Scatter />
+        </Col>
+    </Row>
 </div>;
 
 export default Diagram;  

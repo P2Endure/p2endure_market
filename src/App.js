@@ -143,8 +143,8 @@ render(){
         <Col  md={4} lg={5}>
           <Model/>
         </Col >
-          <Diagram/>            
       </Row>
+          <Diagram/>            
     </div>;
       <Footer/>  
     </div>
