@@ -5,10 +5,11 @@ import { Button, Jumbotron, Panel, Grid, Row, Col, Table, Image, Thumbnail, Chec
 import {LinkContainer} from 'react-router-bootstrap';
 
 const Products = props =>
+<div className="products"> 
 <Grid>
   <Row>
     <Col xs={6} md={2}>
-      <Thumbnail className="thumnail" src={require('./img/Casement.jpg')} >
+      <Thumbnail className="thumbNail" src={require('./img/Casement.jpg')} >
         <h5>smart window</h5>
           <Accordion>
             <Panel header="More" eventKey="2">
@@ -21,7 +22,7 @@ const Products = props =>
       </Thumbnail>
     </Col>
     <Col xs={6} md={2}>
-      <Thumbnail src={require('./img/HVAC.JPG')}>
+      <Thumbnail className="thumbNail" src={require('./img/HVAC.JPG')}>
         <h5>Prefab HVAC system</h5>
         <Accordion>
           <Panel header="More" eventKey="3">
@@ -34,7 +35,7 @@ const Products = props =>
       </Thumbnail>
     </Col>
     <Col xs={6} md={2}>
-      <Thumbnail src={require('./img/easy_panel.jpg')} alt="242x200">
+      <Thumbnail className="thumbNail" src={require('./img/easy_panel.jpg')} alt="242x200">
         <h5>prefabricated panel</h5>
         <Accordion>
           <Panel header="More" eventKey="4">
@@ -47,7 +48,7 @@ const Products = props =>
       </Thumbnail>
     </Col>
     <Col xs={6} md={2}>
-      <Thumbnail src={require('./img/HVAC_4.jpg')}>
+      <Thumbnail className="thumbNail" src={require('./img/HVAC_4.jpg')}>
         <h5>Heatpump</h5>
         <Accordion>
           <Panel header="More" eventKey="5">
@@ -60,7 +61,7 @@ const Products = props =>
       </Thumbnail>
     </Col>
     <Col xs={6} md={2}>
-      <Thumbnail src={require('./img/Heatpump.JPG')}>
+      <Thumbnail className="thumbNail" src={require('./img/Heatpump.JPG')}>
         <h5>Heatpump</h5>
         <Accordion>
           <Panel header="More" eventKey="6">
@@ -77,8 +78,8 @@ const Products = props =>
        <Button id="calculation">Start Calculation</Button>
       </LinkContainer> 
     </Col>
-  </Row>
- <hr id="line"/>
+   </Row>
+  <hr id="line"/>
 </Grid> 
-
+</div>
 export default Products;

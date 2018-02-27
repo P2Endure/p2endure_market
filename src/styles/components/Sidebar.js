@@ -7,6 +7,7 @@ render(){
   return(
     <div className="wrap">
           <ul>
+            <input type="search" id="search" placeholder="Search product..." />
             <li>
               <a href="#">&#10057; Dashboard</a>
             </li>
