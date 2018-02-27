@@ -35,7 +35,7 @@ export default class Scatter extends React.Component {
                   ],
                 x: function(d) { return d.index; },
                 xScale: 'ordinal',
-                width: 400,
+                width: 900,
                 height: 300,
                 // margins:{
                 //   "left": 100,

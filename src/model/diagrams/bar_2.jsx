@@ -22,7 +22,7 @@ class Bar extends React.Component{
     var xLabel = "Case";
     var yLabel = 'EnergySaving';
     //var yTicks = [10, "%"];
-    var width = 400;
+    var width = 900,
     var height = 300;
     var title = 'Bar Chart';
 

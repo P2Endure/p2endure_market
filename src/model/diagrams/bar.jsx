@@ -22,7 +22,7 @@ constructor(props) {
                     xLabel: "Case",
                     yLabel: "EnergySaving",
                     //yTicks: [10, "%"],
-                    width: 400,
+                    width: 900,
                     height: 300,
                     title: "Bar Chart"
                 }
