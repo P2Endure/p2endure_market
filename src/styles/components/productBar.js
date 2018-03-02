@@ -10,7 +10,7 @@ const Products = props =>
   <Row>
     <Col xs={6} md={2}>
       <Thumbnail className="thumbNail" src={require('./img/Casement.jpg')} >
-        <h5>smart window</h5>
+        <h6>smart window</h6>
           <Accordion>
             <Panel header="More" eventKey="2">
               Windows that can be rotated by 180° to reduce the thermal radiation
@@ -23,7 +23,7 @@ const Products = props =>
     </Col>
     <Col xs={6} md={2}>
       <Thumbnail className="thumbNail" src={require('./img/HVAC.JPG')}>
-        <h5>Prefab HVAC system</h5>
+        <h6>Prefab HVAC system</h6>
         <Accordion>
           <Panel header="More" eventKey="3">
             PnP MEP/HVAC engine for deep renovation
@@ -36,7 +36,7 @@ const Products = props =>
     </Col>
     <Col xs={6} md={2}>
       <Thumbnail className="thumbNail" src={require('./img/easy_panel.jpg')} alt="242x200">
-        <h5>prefabricated panel</h5>
+        <h6>prefabricated panel</h6>
         <Accordion>
           <Panel header="More" eventKey="4">
            Hier Text!!!
@@ -49,7 +49,7 @@ const Products = props =>
     </Col>
     <Col xs={6} md={2}>
       <Thumbnail className="thumbNail" src={require('./img/HVAC_4.jpg')}>
-        <h5>Heatpump</h5>
+        <h6>Heatpump</h6>
         <Accordion>
           <Panel header="More" eventKey="5">
              Transfers heat energy from a source of heat to a destination
@@ -62,7 +62,7 @@ const Products = props =>
     </Col>
     <Col xs={6} md={2}>
       <Thumbnail className="thumbNail" src={require('./img/Heatpump.JPG')}>
-        <h5>Heatpump</h5>
+        <h6>Heatpump</h6>
         <Accordion>
           <Panel header="More" eventKey="6">
              Transfers heat energy from a source of heat to a destination

@@ -127,6 +127,7 @@ Sidebar navigation
 }
 
 #search{
+  width: 85%;
   padding: 6px 10px;
   margin-top: 8px;
   margin-right: 16px;
@@ -192,7 +193,11 @@ SVG elements
 *********************************/
 
 .react-d3-core__container_svg{
- 
+  width: 99%;
+}
+
+.react-d3-core__container_svg  g{
+  transform: translate(160, 40);
 }
 
 /*********************************
