@@ -31,22 +31,3 @@ Docker for Windows is a desktop application based on Docker Community Edition (C
 7) When you had correct path of folder, please enter "npm run dev" to run the P2Endure application.
 8) The first initialisation takes a while. After a few seconds, you favourite browser opens and you will see the P2Endure front end.
 
-
-
-
-
-
-Demo Installation
-
-####1. Clone this project or Download that ZIP file
-
-####2. Make sure you have npm installed globally
-
-More details here https://nodejs.org/en/download/
-
-####3. On the command prompt run the following commands
-
-$ cd `project-directory`
-$ npm install
-$ npm run dev
-
