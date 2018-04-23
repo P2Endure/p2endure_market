@@ -22,8 +22,7 @@ const ProductName = props =>{
 
 ProductName.propTypes ={
     isEditing: PropTypes.bool.isRequired,
-    handleNameEdits: PropTypes.func.isRequired
-    
+    handleNameEdits: PropTypes.func.isRequired  
 };   
 
 export default ProductName;
