@@ -1,0 +1,47 @@
+[
+    {
+    "Window":{
+        "U-Factor":" ",
+        "Solar Heat Gain Coefficient":" ",
+        "Visible Transmittance":" "
+    },
+
+    "WindowMaterial:SimpleGlazingSystem":{
+        "Name":" ",
+        "Optical Data Type":" ", 
+        "Window Glass Spectral Data Set Name": " ",
+        "Thickness":" ",
+        "Visible Transmittance (*)":" ",
+        "Incidence":" ",
+        "Conductivity":" "
+    },
+
+    "WindowProperty:FrameAndDivider":{
+        "Name": " ",
+        "Frame Width {m}": " ",
+        "Frame Outside Projection {m} (*)": " ",
+        "Frame Inside Projection {m} (*)": " ",
+        "Frame Conductance {W/m2-K}": " ",
+        "Ratio of Frame-Edge Glass Conductance to Center-Of-Glass Conductance (*)":1,
+        "Frame Solar Absorptance":0.7,
+        "Frame Visible Absorptance":  0.7,
+        "Frame Thermal Hemispherical Emissivity (*)": 0.9,
+        "Divider Type (*)": " ",
+        "Divider Width {m} (*)": " ",
+        "Number of Horizontal Dividers (*)": " ",
+        "Number of Vertical Dividers (*)": " ",
+        "Divider Outside Projection {m} (*)": " ",
+        "Divider Inside Projection {m} (*)": " ",
+        "Divider Conductance {W/m2-K} (*)": " ",
+        "Ratio of Divider-Edge Glass Conductance to Center-Of-Glass Conductance (*)":1,
+        "Divider Solar Absorptance (*)": 0.7,
+        "Divider Visible Absorptance (*)": 0.7,
+        "Divider Thermal Hemispherical Emissivity (*)": 0.9,
+        "Outside Reveal Solar Absorptance (*)": 0.75,
+        "Inside Sill Depth {m} (*)": " ",
+        "Inside Sill Solar Absorptance (*)": 0.75,
+        "Inside Reveal Depth {m} (*)": " ",
+        "Inside Reveal Solar Absorptance (*)": 0.75
+    }
+  }    
+]
