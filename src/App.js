@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
 
+import Fields  from './DynamicForm/fields.js';
 import './styles/css/app.css';
 import './styles/css/responsive.css';
 
@@ -114,6 +115,7 @@ render(){
 
   return( 
     <div className="App">
+      <Fields/>
       <NavBar/>
       <Sidebar/>
       <Jumbo/>
