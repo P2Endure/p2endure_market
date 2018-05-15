@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
 
-import Fields  from './DynamicForm/fields.js';
 import './styles/css/app.css';
 import './styles/css/responsive.css';
 
+//import Form from './DynamicForm/Forms/form.js';
 import NavBar from './styles/components/NavBar.js';
 import Header from './styles/components/index.js';
 import Sidebar from './styles/components/Sidebar.js';
@@ -22,9 +22,18 @@ import src from 'react';
 import Data_Screen from './Data_Screen.js';
 
 import { Button, Jumbotron, Panel, Grid, Row, Col, Table, Image, Thumbnail, Checkbox, PanelGroup, Accordion, Navbar} from 'react-bootstrap';
+import  {TextField} from 'material-ui';
 
 class App extends Component {
 
+/*   state = {
+    fields:{}
+  };
+
+  onSubmit = (fields) => {
+    this.setState({fields});
+    console.log('App component got: ', fields);
+  }; */
   // state = {
   //   isFiltered: false,
   //   pendingProduct: "",
@@ -115,7 +124,10 @@ render(){
 
   return( 
     <div className="App">
-      <Fields/>
+{/*       <Form onSubmit ={fields => this.onSubmit(fields)}
+        
+      />
+      <p>{JSON.stringify(this.state.fields, null, 2)}</p> */}
       <NavBar/>
       <Sidebar/>
       <Jumbo/>
@@ -139,7 +151,7 @@ render(){
           removeProduct={this.removeProduct}
           pendingProduct={this.state.pendingProduct}
         />
-      </div>   */}
+      </div>  */} 
     <div className="container-fluid">
       <Row>
         <Col  md={4} lg={5}>
