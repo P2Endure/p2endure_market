@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class Form extends React.Component{
+export default class GlazingForm extends React.Component{
     state ={
         Name:" ",
         Optical_Data_Type:" ", 

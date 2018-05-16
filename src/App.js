@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import './styles/css/app.css';
 import './styles/css/responsive.css';
 
-//import Form from './DynamicForm/Forms/form.js';
+//import Form from './DynamicForm/Forms/windowForm';
 import NavBar from './styles/components/NavBar.js';
+import DrawerButton from './DynamicForm/FormButton/toggleDrawerButton.js'
 import Header from './styles/components/index.js';
 import Sidebar from './styles/components/Sidebar.js';
 import Jumbo from './styles/components/jumbo.js';
@@ -40,12 +42,17 @@ render(){
 
   return( 
     <div className="App">
-{/*   <Form onSubmit ={fields => this.onSubmit(fields)}/>
-      <p>{JSON.stringify(this.state.fields, null, 2)}</p> */}
-      <NavBar/>
+{/*       <Form onSubmit ={fields => this.onSubmit(fields)}/>
+        <p>
+          {JSON.stringify(this.state.fields, null, 2)}
+        </p>  */}
+      <NavBar/> 
       <Sidebar/>
       <Jumbo/>
       <Products/>
+      <MuiThemeProvider>
+        <DrawerButton />
+      </MuiThemeProvider> 
     <div className="container-fluid">
       <Row>
         <Col  md={4} lg={5}>
