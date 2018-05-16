@@ -26,6 +26,7 @@ import  {TextField} from 'material-ui';
 
 class App extends Component {
 
+//state and onSubmit to integrate the diverent forms of the products  
 /*   state = {
     fields:{}
   };
@@ -34,124 +35,17 @@ class App extends Component {
     this.setState({fields});
     console.log('App component got: ', fields);
   }; */
-  // state = {
-  //   isFiltered: false,
-  //   pendingProduct: "",
-  //   products: []
-  // };
-  
-  // lastProductId = 0;
-  
-  // newProductId = () => {
-  //   const id = this.lastProductId;
-  //   this.lastProductId += 1;
-  //   return id;
-  // };
-  
-  // toggleProductProperty = (property, id) =>
-  // this.setState({
-  //   products: this.state.products.map(product => {
-  //     if (id === product.id) {
-  //       return {
-  //         ...product,
-  //         [property]: !product[property]
-  //       };
-  //     }
-  //     return product;
-  //   })
-  // });
-
-  // toggleConfirmation = id =>
-  // this.toggleProductProperty("isConfirmed", id);
-
-  // removeProduct = id =>
-  // this.setState({
-  //   products: this.state.products.filter(product => id !== product.id)
-  // });
-
-  // toggleEditing = id =>
-  // this.toggleProductProperty("isEditing", id);
-
-  // setName = (name, id) =>
-  // this.setState({
-  //   products: this.state.products.map(product => {
-  //     if (id === product.id) {
-  //       return {
-  //         ...product,
-  //         name
-  //       };
-  //     }
-  //     return product;
-  //   })
-  // });
-
-  // toggleFilter = () =>
-  // this.setState({ isFiltered: !this.state.isFiltered });
-
-  // handleNameInput = e =>
-  // this.setState({ pendingProduct: e.target.value });
-
-  // newProductSubmitHandler = e => {
-  //   e.preventDefault();
-  //   const id = this.newProductId();
-  //   this.setState({
-  //     products: [
-  //       {
-  //         name: this.state.pendingProduct,
-  //         isConfirmed: false,
-  //         isEditing: false,
-  //         id
-  //       },
-  //       ...this.state.products
-  //     ],
-  //     pendingProduct: ''
-  //   });
-  // }
-
-  // getTotalShown = () => this.state.products.length;
-
-  // getAttendingProducts = () =>
-  //   this.state.products.reduce(
-  //     (total, product) => product.isConfirmed ? total + 1 : total,
-  //     0
-  //   );
 
 render(){
 
-  // const totalProductListed = this.getTotalShown();
-  // const numberAttending = this.getAttendingProducts();
-  // const numberUnconfirmed = totalProductListed - numberAttending;
-
   return( 
     <div className="App">
-{/*       <Form onSubmit ={fields => this.onSubmit(fields)}
-        
-      />
+{/*   <Form onSubmit ={fields => this.onSubmit(fields)}/>
       <p>{JSON.stringify(this.state.fields, null, 2)}</p> */}
       <NavBar/>
       <Sidebar/>
       <Jumbo/>
       <Products/>
-      {/* <div className="App">
-      <Header
-          newProductSubmitHandler={this.newProductSubmitHandler}
-          pendingProduct={this.state.pendingProduct}
-          handleNameInput={this.handleNameInput}
-        />
-      <MainContent
-          toggleFilter={this.toggleFilter}
-          isFiltered={this.state.isFiltered}
-          totalProductListed={totalProductListed}
-          numberAttending={numberAttending}
-          numberUnconfirmed={numberUnconfirmed}
-          products={this.state.products}
-          toggleConfirmation={this.toggleConfirmation}
-          toggleEditing={this.toggleEditing}
-          setName={this.setName}
-          removeProduct={this.removeProduct}
-          pendingProduct={this.state.pendingProduct}
-        />
-      </div>  */} 
     <div className="container-fluid">
       <Row>
         <Col  md={4} lg={5}>
