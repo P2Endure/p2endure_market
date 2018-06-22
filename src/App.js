@@ -8,7 +8,7 @@ import './styles/css/responsive.css';
 
 //import Form from './DynamicForm/Forms/windowForm';
 import NavBar from './styles/components/NavBar.js';
-import DrawerButton from './DynamicForm/FormButton/toggleDrawerButton.js'
+import DrawerButton from './DynamicForm/Forms/toggleDrawerButton.js'
 import Header from './styles/components/index.js';
 import Sidebar from './styles/components/Sidebar.js';
 import Jumbo from './styles/components/jumbo.js';
@@ -37,9 +37,36 @@ class App extends Component {
     this.setState({fields});
     console.log('App component got: ', fields);
   }; */
+constructor(props){
+  super();
+  this.state ={
+    isLoading: true,
+    buildingElements: []
+  }
+}
+
+componentDidMount(){
+  this.fetchData();
+}
+
+fetchData(){
+  var json2 = require('./model/data/ProductData/Material.json')
+  for (var i in json2){
+    this.json2([i]["Material"], ["Name"])
+    console.log('IDF max field ' + JSON.stringify(json2[i]["Material"], ["Name"]))
+  }
+}
+
+changeData(){
+  
+    var json2 = require('./model/data/BuildingDataBevorRenovation/Arcona_BEM.json')
+    for (var i in json2){
+    console.log(JSON.stringify(json2[i]["WindowMaterial:Shade"]));
+    }
+  };
+
 
 render(){
-
   return( 
     <div className="App">
 {/*       <Form onSubmit ={fields => this.onSubmit(fields)}/>
@@ -50,6 +77,9 @@ render(){
       <Sidebar/>
       <Jumbo/>
       <Products/>
+      <Button onClick ={this.changeData}>
+          {this.setState ? '1' : '2'}
+        </Button> 
       <MuiThemeProvider>
         <DrawerButton />
       </MuiThemeProvider> 
