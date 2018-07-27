@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import ProductName from './ProductName';
 
 const Product = props => 
-      <li>
+      <li className="productList">
         <ProductName 
             isEditing={props.isEditing}
             handleNameEdits={e => props.setName(e.target.value)}>
@@ -11,10 +11,9 @@ const Product = props =>
         </ProductName>
         <label>
             <input 
-                type="checkbox" 
-                checked={props.isConfirmed}
-                onChange={props.handleConfirmation}
-                /> Confirmed
+               type="checkbox"
+               checked={props.isConfirmed}
+               onChange={props.handleConfirmation} /> Confirmed
         </label>
         <button onClick={props.handleToggleEditing}>
             {props.isEditing ? "save": "edit"}
@@ -28,7 +27,7 @@ Product.propTypes ={
     isConfirmed: PropTypes.bool.isRequired,
     isEditing: PropTypes.bool.isRequired,
     handleConfirmation: PropTypes.func.isRequired,
-    handleToggleEditing: PropTypes.func.isRequired,
+    handeToggleEditing: PropTypes.func.isRequired,
     setName: PropTypes.func.isRequired,
     handleRemove: PropTypes.func.isRequired
 };  

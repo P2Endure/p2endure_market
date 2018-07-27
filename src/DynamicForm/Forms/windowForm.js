@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class Form extends React.Component{
+export default class FormWindow extends React.Component{
     state ={
         U_Factor:'',
         Solar_Heat_Gain_Coefficient:'',
