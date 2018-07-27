@@ -5,7 +5,7 @@ import Product from './Product';
 import PendingProduct from './PendingProduct';
 
 const ProductList = props =>
-  <ul>
+  <ul className="product">
     <PendingProduct name={props.pendingProduct} />
     {props.products
       .filter(product => !props.isFiltered || product.isConfirmed)

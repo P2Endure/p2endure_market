@@ -54,6 +54,142 @@ Product layout
 }
 
 /*********************************
+Product Input Form navigation
+*********************************/
+h1,
+p,
+form button {
+  color: white;
+}
+
+form {
+  width: 20%;
+  background: white;
+  display: inline-block;
+  overflow: hidden;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: .2em;
+  border: solid 4px white;
+  -webkit-box-shadow: 0 1px 14px rgba(0, 0, 0, .12);
+  box-shadow: 0 1px 14px rgba(0, 0, 0, .12);
+}
+
+form button {
+  padding: 0 1em;
+  font-size: 1em;
+  background: #7bcbc4;
+  border-radius: .2em;
+}
+
+button {
+  cursor: pointer;
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+}
+
+header input {
+  padding: 1px;
+  font-size: 1.15em;
+  width: 100%;
+}
+
+li span,
+li input[type=text] {
+  color: #707070;
+  font-size: 1.3em;
+  margin-bottom: .3em;
+}
+
+li input[type=text] {
+  padding: .2em;
+  width: 95%;
+  border: 1px dotted rgba(0, 0, 0, .2);
+}
+
+
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+li label {
+  font-size: .9em;
+  display: block;
+  color: rgba(112, 112, 112, .55);
+}
+
+li span,
+li input[type=text]:first-child {
+  display: block;
+}
+
+li button {
+  font-size: .78em;
+  margin-top: 1.65em;
+  margin-right: .4em;
+  border-radius: .3em;
+  padding: .4em .6em;
+  color: white;
+  background: #58b7cd;
+}
+
+li button:last-child {
+  background: rgba(88, 183, 205, .5);
+}
+
+div > input:last-child {
+  font-size: 1em;
+  margin-left: 6px;
+}
+
+div > label {
+  color: #767676;
+}
+
+.counter {
+  display: block;
+}
+
+tr {
+  color: rgba(118, 118, 118, .75);
+}
+
+td:last-child {
+  font-weight: bold;
+  font-size: 1.16em;
+  color: rgb(118, 118, 118);
+}
+/* pending */
+
+.pending {
+  border-color: rgba(210, 210, 210, .5);
+}
+
+.pending span {
+  color: rgb(210, 210, 210);
+}
+/* responded */
+
+.responded {
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+  border-color: rgba(88, 183, 205, .9);
+}
+
+.responded label {
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+  color: rgba(88, 183, 205, 1);
+}
+
+
+/*********************************
 Header navigation
 *********************************/
 #header {
@@ -93,12 +229,76 @@ Header navigation
   margin-top: 10%;
 }
 
+
+/*********************************
+Product search
+*********************************/
+
+.Select-input {
+  height: 34px;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+}
+
+.Select-arrow-zone {
+  cursor: pointer;
+  display: table-cell;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  width: 25px;
+  padding-right: 5px;
+}
+
+.Select-arrow {
+  border-color: #999 transparent transparent;
+  border-style: solid;
+  border-width: 5px 5px 2.5px;
+  display: inline-block;
+  height: 0;
+  width: 0;
+  position: relative;
+}
+
+.Select-control {
+  background-color: #fff;
+  border-color: #d9d9d9 #ccc #b3b3b3;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  color: #333;
+  cursor: default;
+  display: table;
+  border-spacing: 0;
+  border-collapse: separate;
+  height: 36px;
+  outline: none;
+  overflow: hidden;
+  position: relative;
+  width: 10%;
+}
+
+.Select--single>.Select-control .Select-value, .Select-placeholder {
+  bottom: 0;
+  color: #aaa;
+  left: 0;
+  line-height: 34px;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 /*********************************
 Sidebar navigation
 *********************************/
 .wrap {
   width: 15%;
-  height: 1589px;
+  height: 1820px;
   float: left;
   border-color: #ddd;
   border-width: 2px;
