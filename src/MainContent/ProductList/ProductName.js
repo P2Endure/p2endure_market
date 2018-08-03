@@ -1,15 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import ProductNameSave from './ProductNameSave.js';
+import Input from '@material-ui/core/Input';
 
 const ProductName = props =>{
     if (props.isEditing){
         return(
-            <input 
-            type="text" 
-            value={props.children}
-            onChange={props.handleNameEdits}
-            />
+                <ProductNameSave/>
         );
     }
 

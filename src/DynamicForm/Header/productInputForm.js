@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import ProductField from "../Forms/select";
 
 const ProductInputForm = props =>
   <form onSubmit={props.newProductSubmitHandler}>
