@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 
 const SelectedFilter = props =>
   <div>
-    <h2>Selected</h2>
     <label>
       <input
         type="checkbox"
