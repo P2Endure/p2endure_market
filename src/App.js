@@ -5,7 +5,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import './styles/css/app.css';
 import './styles/css/responsive.css';
-//import AddProductForm from './AddProductForm';
+import AddProductForm from './AddProductForm';
 //import Form from './DynamicForm/Forms/windowForm';
 import NavBar from './styles/components/NavBar.js';
 //import DrawerButton from './DynamicForm/Forms/toggleDrawerButton.js'
@@ -16,15 +16,10 @@ import Footer from './styles/components/footer.js';
 import Products from './styles/components/productBar.js';
 import Model from './model/model.js';
 import Diagram from './model/diagram.js';
-import ProductField from './DynamicForm/Forms/select.js';
 import MainContent from './MainContent';
-
-import img from  'react';
-import src from 'react';
 import Data_Screen from './Data_Screen.js';
+import { Row, Col} from 'react-bootstrap';
 
-import { Button, Jumbotron, Panel, Grid, Row, Col, Table, Image, Thumbnail, Checkbox, PanelGroup, Accordion, Navbar} from 'react-bootstrap';
-import  {TextField} from 'material-ui';
 
 class App extends Component {
 
@@ -74,10 +69,9 @@ render(){
           {JSON.stringify(this.state.fields, null, 2)}
         </p>  */}
       <NavBar/>
-      {/* <ProductField/> */}
-      {/* <AddProductForm/>  */}
       <Sidebar/>
       <Jumbo/>
+      <AddProductForm/>
       {/* <MuiThemeProvider>
         <DrawerButton />
       </MuiThemeProvider> */}
