@@ -48,7 +48,7 @@ const Products = props =>
       </Thumbnail>
     </Col>
     <Col xs={6} md={2}>
-      <Thumbnail className="thumbNail" src={require('./img/HVAC_4.jpg')}>
+      <Thumbnail className="thumbNail" src={require('./img/RAtW.jpg')}>
         <h6>Heatpump</h6>
         <Accordion>
           <Panel header="More" eventKey="5">
