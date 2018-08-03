@@ -5,6 +5,7 @@
   "dependencies": {
     "history": "^4.6.3",
     "material-ui": "^0.20.0",
+    "material-ui-image": "^2.1.1",
     "mui-react": "0.0.10",
     "react": "^15.6.1",
     "react-aztec": "^0.1.36",
