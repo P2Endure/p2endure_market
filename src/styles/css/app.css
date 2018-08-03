@@ -75,6 +75,19 @@ form {
   box-shadow: 0 1px 14px rgba(0, 0, 0, .12);
 }
 
+.productForm{
+  width: 60%;
+  background: white;
+  display: inline-block;
+  overflow: hidden;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: .2em;
+  border: solid 4px white;
+  -webkit-box-shadow: 0 1px 14px rgba(0, 0, 0, .12);
+  box-shadow: 0 1px 14px rgba(0, 0, 0, .12);
+}
+
 form button {
   padding: 0 1em;
   font-size: 1em;
