@@ -2,11 +2,7 @@ import React from 'react';
 import createClass from 'create-react-class';
 import PropTypes from 'prop-types';
 import Select from 'react-select-2';
-import Drawer from 'material-ui/Drawer';
-import MenuItem from 'material-ui/MenuItem';
-import RaisedButton from 'material-ui/RaisedButton';
-import FormWindow from './windowForm';
-import FormFacade from './facadeForm';
+
 
 
 var PRODUCTS = require('./selectProducts.js');
