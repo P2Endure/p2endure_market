@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 
 import Header from './DynamicForm/Header';
 import MainContent from './MainContent';
+import ProductField from './DynamicForm/Forms/select.js';
 
 class AddProductForm extends Component {
 
   state = {
     isFiltered: false,
-    pendingProducts: "",
+    pendingProducts: require('./DynamicForm/Forms/selectProducts.js'),
     products: []
   };
 
