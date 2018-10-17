@@ -6,12 +6,17 @@ export default class ProductNameSave extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {open: false};
+    this.state = {
+      field:'', 
+      open: false
+    };
   }
-
+  
   state = {
     fields:{}
   };
+
+
 
   onSubmit = (fields) => {
     this.setState({fields});
@@ -19,6 +24,7 @@ export default class ProductNameSave extends React.Component {
   };
 
   render() {
+    const fields = this.state.fields
     return (
       <div>
         <FormWindow  onSubmit ={fields => this.onSubmit(fields)} />
