@@ -44,7 +44,7 @@ render(){
   return(
     <div className="panel">
       <div className="panel-inlay">
-        <h3>&#10066; Heating and Ventilation</h3>
+        <h3>&#8721; Heating and Ventilation</h3>
       </div>
       <ScatterPlot
       data= {this.state.chartData}

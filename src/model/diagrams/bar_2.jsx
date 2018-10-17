@@ -1,10 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
 import {BarChart} from 'react-d3-basic';
-import ChartSeries from './chartSeries.js';
-import { Button, Jumbotron, Panel, Grid, Row, Col, Table, Image, Thumbnail, Checkbox, PanelGroup, Accordion} from 'react-bootstrap';
-import XValue from './XValue';
 
 class Bar extends React.Component{ 
 

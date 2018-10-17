@@ -27,7 +27,7 @@ export default class Line extends React.Component {
       return (
       <div className="panel">
        <div className="panel-inlay">
-        <h3>&#10066; Energy Costs</h3>
+        <h3>&#8364; Energy Costs</h3>
        </div>    
         <LineChart
           legend ={true}

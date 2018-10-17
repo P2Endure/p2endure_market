@@ -36,7 +36,7 @@ render(){
   return (
   <div className="panel">
     <div className="panel-inlay">
-      <h3>&#10066; Single Costs</h3>
+      <h3>&#8364; Single Costs</h3>
     </div>   
     <PieChart
       data= {this.state.generalChartData}

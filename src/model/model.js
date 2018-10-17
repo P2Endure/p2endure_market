@@ -1,11 +1,8 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-
-import { Button, Jumbotron, Panel, Grid, Row, Col, Table, Image, Thumbnail, Checkbox } from 'react-bootstrap'; 
-
+import React from 'react';
 
 const Model = props => 
     <a className="sketchfab-embed-wrapper">
-     <iframe  width="700" height="350" src="https://sketchfab.com/models/75294282cf61466c94e36fe44db791f9/embed" frameBorder="0"></iframe>
+     <iframe className="frame_1"  width="500" height="550" src="https://sketchfab.com/models/8a48980e56fe4e8494b0c86a632381f0/embed?autostart=1" frameBorder="0"></iframe>
     </a>;
-export default Model;  
+export default Model; 
+
