@@ -1,20 +1,20 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-
+import React from 'react';
 import Line from './diagrams/Line.jsx';
-import Bar from './diagrams/bar.jsx';
+import Bar from './diagrams/bar_test.jsx';
 import Donut from './diagrams/donut.jsx';
 import Scatter from './diagrams/Scatter.jsx';
+import {Row, Col } from 'react-bootstrap'; 
+import StartSimulation from './startSimulation.js';
+import data_2 from './data/barTest.json';
 
-import barTest from './data/barTest.json';
-import lineTest from './data/lineTest.json';
-import pieTest from './data/pieTest.json';
+export default class Diagram extends React.Component{
 
-import { Button, Jumbotron, Panel, Grid, Row, Col, Table, Image, Thumbnail, Checkbox } from 'react-bootstrap'; 
-
-
-const Diagram = props => 
-<div>
+render(){
+  return(
+    <div>
+    <StartSimulation
+      prop2={this.updateStateObject}
+    />
     <Row>
         <Col md={8} lg={8}>
           <Bar />    
@@ -31,6 +31,7 @@ const Diagram = props =>
           <Scatter />
         </Col>
     </Row>
-</div>;
-
-export default Diagram;  
+</div>
+    )
+  }
+}

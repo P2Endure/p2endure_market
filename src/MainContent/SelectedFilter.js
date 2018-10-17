@@ -2,7 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const SelectedFilter = props =>
-  <div>
+
+   <div className="hideSelectForm">
     <label>
       <input
         type="checkbox"
@@ -11,8 +12,7 @@ const SelectedFilter = props =>
       />{" "}
       Hide those who don't selected
     </label>
-  </div>;
-
+   </div> 
 SelectedFilter.propTypes = {
   toggleFilter: PropTypes.func.isRequired,
   isFiltered: PropTypes.bool.isRequired
