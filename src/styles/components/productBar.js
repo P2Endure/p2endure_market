@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
 
-import { Button, Jumbotron, Panel, Grid, Row, Col, Table, Image, Thumbnail, Checkbox, PanelGroup, Accordion } from 'react-bootstrap';
+import { Button, Panel, Grid, Row, Col, Thumbnail, Checkbox, Accordion } from 'react-bootstrap';
 import {LinkContainer} from 'react-router-bootstrap';
 
 const Products = props =>
