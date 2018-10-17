@@ -21,6 +21,7 @@
   },
   "scripts": {
     "dev": "webpack-dev-server",
+    "start": "webpack-dev-server",
     "prod": "webpack -p",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
