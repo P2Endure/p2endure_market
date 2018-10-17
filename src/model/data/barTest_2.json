@@ -1,15 +1,18 @@
+{
+"testParameter":
 [
-{"case":"A","EnergySaving":5094}
-,
-{"case":"B","EnergySaving":3050}
-,
-{"case":"C","EnergySaving":1658}
-,
-{"case":"D","EnergySaving":3713}
-,
-{"case":"E","EnergySaving":2429}
-,
-{"case":"F","EnergySaving":4009}
-,
-{"case":"G","EnergySaving":4601}
-]
+    {"case":"A","EnergySaving":5094}
+    ,
+    {"case":"B","EnergySaving":3050}
+    ,
+    {"case":"C","EnergySaving":1658}
+    ,
+    {"case":"D","EnergySaving":3713}
+    ,
+    {"case":"E","EnergySaving":2429}
+    ,
+    {"case":"F","EnergySaving":4009}
+    ,
+    {"case":"G","EnergySaving":4601}
+    ]
+}
