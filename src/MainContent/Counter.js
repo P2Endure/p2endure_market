@@ -2,15 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Counter = props => 
-
+<div>
 <table className="counter">
 <tbody>
   <tr>
-    <td>Attending:</td>
+    <td>Marked:</td>
     <td>{props.numberAttending}</td>
   </tr>
   <tr>
-    <td>Unconfirmed:</td>
+    <td>Unmarked:</td>
     <td>{props.numberUnconfirmed}</td>
   </tr>
   <tr>
@@ -18,8 +18,8 @@ const Counter = props =>
     <td>{props.totalProductListed}</td>
   </tr>
 </tbody>
-</table>;
-
+</table>
+</div>
 Counter.PropTypes={
     numberAttending: PropTypes.number,
     numberUnconfirmed: PropTypes.number,
