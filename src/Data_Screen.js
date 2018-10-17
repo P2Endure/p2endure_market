@@ -134,33 +134,34 @@ class Data_Screen extends React.Component{
     <hr id="line"/>
   </Grid>
 
-  <div className="container-fluid">
-  <Row>
-  <Col  md={4} lg={5}>        
-  <a className="sketchfab-embed-wrapper">
-                  <iframe  width="500" height="350" src="https://sketchfab.com/models/75294282cf61466c94e36fe44db791f9/embed" frameBorder="0"></iframe>
-          </a>
-        </Col>
-        <Col  md={4} lg={3}>
-          <a className="services">
-                  <h1>Costs</h1>
-                    <h3>Renovation Costs</h3>
-                      <Line />
-                    <h3>Life cycle Costs</h3>
-                      <Bar />
-          </a>
-          </Col>
-                 <Col  md={4} lg={4}>
-          <a className="services">
-                  <h1>Your Project</h1>
-                    <h3>Renovation Costs</h3>
-                      <Donut />
-                    <h3>Heating and Ventilation</h3>
-                      <Scatter />
-          </a>
-        </Col>
-  </Row>
- </div>
+  <div className="App">
+{/*       <Form onSubmit ={fields => this.onSubmit(fields)}/>
+        <p>
+          {JSON.stringify(this.state.fields, null, 2)}
+        </p>  */}
+      <NavBar/> 
+      <Sidebar/>
+      <Jumbo/>
+      <MuiThemeProvider>
+        <DrawerButton />
+      </MuiThemeProvider>
+      <Products/>
+{/*       <Button onClick ={this.changeData}>
+          {this.setState ? '1' : '2'}
+        </Button>  */}
+      <LinkContainer to="/Data_Screen">
+       <Button id="calculation">Start Calculation</Button>
+      </LinkContainer> 
+    <div className="container-fluid">
+      <Row>
+        <Col  md={4} lg={5}>
+          <Model/>
+        </Col >
+      </Row>
+          <Diagram/>            
+    </div>;
+      <Footer/>  
+    </div>
 
           <footer>
             <section className="textf">
