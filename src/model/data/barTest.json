@@ -1,3 +1,5 @@
+{
+"testParameter":
 [
 {"case":"A","EnergySaving":2094}
 ,
@@ -13,3 +15,4 @@
 ,
 {"case":"G","EnergySaving":4601}
 ]
+}
