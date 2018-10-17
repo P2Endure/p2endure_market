@@ -54,7 +54,7 @@ Product layout
 }
 
 /*********************************
-Product Input Form navigation
+Product Input Form
 *********************************/
 h1,
 p,
@@ -75,8 +75,47 @@ form {
   box-shadow: 0 1px 14px rgba(0, 0, 0, .12);
 }
 
+.uploadForm{
+  float: left;
+  left: 50%;
+  position: relative;
+  width: 30%;
+  margin: 10px 0 0 10px; 
+}
+
+.hideSelectForm{
+  float: left;
+  left: 32%;
+  position: relative;
+  margin-left: 0px; 
+  margin-top: 4%;
+  width: 20%; 
+}
+
+ul.product {
+  float: right;
+  position: relative;
+  width: 70%;
+}
+
+.productList{
+  list-style-type: none;
+  float: right;
+  position: relative;
+  right: 15%;
+}
+
+.counter{
+  float: left;
+  position: relative;
+  margin-top: 4%; 
+  left: 1%;
+}
+
 .productForm{
-  width: 60%;
+  width: 80%;
+  float: right;
+  right: 90%;
   background: white;
   display: inline-block;
   overflow: hidden;
@@ -232,6 +271,7 @@ Header navigation
 #nav ul li {
   float: left;
   list-style: none;
+  list-style-type: none;
 }
 
 #nav ul li a {
