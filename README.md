@@ -24,6 +24,8 @@ The following description is for Windows 10 systems.
 
 Docker for Windows is a desktop application based on Docker Community Edition (CE). The Docker for Windows install package includes everything you need to run Docker on a Windows system. Docker for Windows requires a 64 Bit version of the operating system with Hyper-V. Hyper-V is included in Windows 10.
 
+INSTALLATION STEPS:
+
 1) After you downloaded the stable Docker version for windows, doppelclick on "Docker for Windows Installer.exe" to run the installation.
 2) Follow the install wizard to accept the license, authorize the installer, and proceed with the install.You are asked to authorize Docker.app with     your system password during the install process. Privileged access is needed to install networking components, links to the Docker apps, and          manage the Hyper-V Virtual Machine.
 3) Click Finish on the setup complete dialog to launch Docker.
