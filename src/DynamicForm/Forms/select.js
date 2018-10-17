@@ -3,8 +3,6 @@ import createClass from 'create-react-class';
 import PropTypes from 'prop-types';
 import Select from 'react-select-2';
 
-
-
 var PRODUCTS = require('./selectProducts.js');
 
 var ProductField = createClass({
