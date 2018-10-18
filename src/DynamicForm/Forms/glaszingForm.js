@@ -1,3 +1,7 @@
+{/*
+    define data for the glazing of a window
+*/}
+
 import React from 'react';
 
 export default class GlazingForm extends React.Component{

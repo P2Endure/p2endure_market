@@ -1,3 +1,7 @@
+{/*
+    define data for facade
+*/}
+
 import React from 'react';
 
 export default class FormFacade extends React.Component{
