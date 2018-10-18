@@ -1,6 +1,12 @@
+{/*
+    Constructor loads the start values
+    updateStateObjects loads new data values from ReadEnergyData
+    Render of new values in RunExchange 
+*/}
+
 import React from 'react';
-import ComponentB from './runExchange.js'
-import MyApp_2 from '../ReadJson/readEnergyData.js';
+import RunExchange from './runExchange.js'
+import ReadEnergyData from '../ReadJson/readEnergyData.js';
 
 export default class CompareValues extends React.Component{
     constructor(props){
@@ -17,7 +23,7 @@ export default class CompareValues extends React.Component{
 
     updateStateObject(){
         const newValue = this.state.MyAppChild;
-        newValue.Roughness = <MyApp_2/>;
+        newValue.Roughness = <ReadEnergyData/>;
         this.setState({
             MyAppChild: newValue,
         });
@@ -25,7 +31,7 @@ export default class CompareValues extends React.Component{
 
     render(){
         return(
-            <ComponentB
+            <RunExchange
                 prop1={this.state.MyAppChild}
                 prop2={this.updateStateObject}
           />

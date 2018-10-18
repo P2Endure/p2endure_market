@@ -1,8 +1,16 @@
+{/*
+    Class presents the parameters for the data exchange
+    state: raw data without values
+    onSubmit: set values for the data which are defined under state
+    handleChange: set new values for the state data
+    render: render of the (new) data, MyAppChild renders the data to the front end
+*/}
+
 import React from 'react';
-import MyAppChild_2 from './readEnergyDataChild.js';
+import ReadEnergyDataChild from './readEnergyDataChild.js';
 import data from '../../model/data/ProductData/Material.json';
 
-export default class MyApp_2 extends React.Component {
+export default class ReadEnergyData extends React.Component {
 
   constructor(props) {
     super(props);
@@ -47,10 +55,10 @@ onSubmit= e =>{
       });
     let children = [];
     arr.map((energyValues, i) => {
-        children.push(<MyAppChild_2 key={energyValues.Name} 
-                                    Name={energyValues.Name} 
-                                    Roughness={energyValues.Roughness} 
-                                    Thickness={energyValues.Thickness} />);
+        children.push(<ReadEnergyDataChild  key={energyValues.Name} 
+                                            Name={energyValues.Name} 
+                                            Roughness={energyValues.Roughness} 
+                                            Thickness={energyValues.Thickness} />);
     });
     
 return(
