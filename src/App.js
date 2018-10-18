@@ -11,7 +11,6 @@ import Footer from './styles/components/footer.js';
 import Products from './styles/components/productBar.js';
 import Model from './model/model.js';
 import Diagram from './model/diagram.js';
-import Data_Screen from './Data_Screen.js';
 import { Row, Col} from 'react-bootstrap';
 import CompareValues from './MainContent/CompareValues/compareValues.js';
 import DrawerButton from './MainContent/ProductList/toggleDrawerButton.js';
@@ -59,7 +58,6 @@ ReactDOM.render(
   <BrowserRouter>
     <div>
       <Route exact path="/" component={App} />
-      <Route path="/Data_Screen" component ={Data_Screen} />
     </div>
   </BrowserRouter>,
   document.getElementById('root')
