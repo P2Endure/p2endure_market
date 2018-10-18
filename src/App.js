@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
 import './styles/css/app.css';
 import './styles/css/responsive.css';
-import AddProductForm from './AddProductForm';
 import NavBar from './styles/components/NavBar.js';
 import Sidebar from './styles/components/Sidebar.js';
 import Jumbo from './styles/components/jumbo.js';
@@ -29,8 +28,7 @@ constructor(props){
 render(){
   return( 
     <div className="App">
-      <NavBar/>
-      
+      <NavBar/> 
       <Sidebar/>
       <Jumbo/>
       <DrawerButton/>
@@ -47,7 +45,6 @@ render(){
         <Diagram/>            
     </div>
       <Footer/>
-
       <CompareValues/>
     </div>
     )
