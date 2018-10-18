@@ -1,5 +1,5 @@
 import React from 'react';
-import FormWindow from './windowForm.js';
+import GlazingForm from '../../DynamicForm/Forms/glaszingForm.js';
 
 
 export default class ProductNameSave extends React.Component {
@@ -27,7 +27,7 @@ export default class ProductNameSave extends React.Component {
     const fields = this.state.fields
     return (
       <div>
-        <FormWindow  onSubmit ={fields => this.onSubmit(fields)} />
+        <GlazingForm  onSubmit ={fields => this.onSubmit(fields)} />
       </div>
     );
   }
