@@ -1,12 +1,11 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var PieChart = require('react-d3-basic').PieChart;
+import React from 'react';
+import {PieChart} from 'react-d3-basic';
 
 export default class Donut extends React.Component {
 
 constructor(props) {
     super(props);
-    this.state = { generalChartData: require('../data/pieTest.json'),
+    this.state = {
                    chartSeries : [
                     {
                       "field": "Room 1",
@@ -39,9 +38,9 @@ render(){
       <h3>&#8364; Single Costs</h3>
     </div>   
     <PieChart
-      data= {this.state.generalChartData}
-      width= {400}
-      height= {300}
+      data= {this.props.data}
+      width= {this.state.width}
+      height= {this.state.height}
       chartSeries= {this.state.chartSeries}
       value = {this.state.value}
       name = {this.state.name}

@@ -1,12 +1,11 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var ScatterPlot = require('react-d3-basic').ScatterPlot;
+import React from 'react';
+import {ScatterPlot} from 'react-d3-basic';
 
 export default class Scatter extends React.Component {
 
    constructor(props) {
     super(props);
-    this.state = { chartData: require('../data/lineTest.json'),
+    this.state = { 
                   chartSeries: [
                     {
                       field: 'Room 1',
@@ -47,7 +46,7 @@ render(){
         <h3>&#8721; Heating and Ventilation</h3>
       </div>
       <ScatterPlot
-      data= {this.state.chartData}
+      data= {this.props.data}
       width= {this.state.width}
       height= {this.state.height}
       //margins= {this.state.margins}

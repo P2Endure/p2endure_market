@@ -1,3 +1,5 @@
+{
+"testParameter":
 [
 {"Room 1":3231,"Room 2":3150,"Room 3":3541,"Room 4":3042, "index":1}
 ,
@@ -23,3 +25,4 @@
 ,
 {"Room 1":3159,"Room 2":3104,"Room 3":3486,"Room 4":2999, "index":12}
 ]
+}

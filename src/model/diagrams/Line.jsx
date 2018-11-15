@@ -1,42 +1,44 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var LineChart = require('react-d3-basic').LineChart;
-
+import React from 'react';
+import {LineChart} from 'react-d3-basic';
 
 export default class Line extends React.Component {
 
-  constructor(props) {
+  constructor(props){
     super(props);
-    this.state = { chartData: require('../data/lineTest.json'),
-                  chartSeries: [
-                    {
-                      field: 'Room 1',
-                      name: 'Room 1',
-                      color: 'black',
-                      style: {
-                        "strokeWidth": 5,
-                        "strokeOpacity": .2,
-                        "fillOpacity": .2,
-                      }
-                    }
-                  ],
-                x: function(d) { return d.index; }};
+    this.state = {
+    chartSeries : [
+      {
+        field: 'Room 1',
+        name: 'Room 1',
+        color: 'black',
+        style: {
+          "strokeWidth": 5,
+          "strokeOpacity": .2,
+          "fillOpacity": .2,
+        }
+      }
+    ],
+
+    x : function(d) { return d.index; },
+    width : 400,
+    height : 300,
   }
- 
-    render() {
-      return (
-      <div className="panel">
-       <div className="panel-inlay">
+}
+
+render() {
+  return (
+    <div className="panel">
+      <div className="panel-inlay">
         <h3>&#8364; Energy Costs</h3>
-       </div>    
-        <LineChart
+      </div>    
+       {this.props.data &&<LineChart
           legend ={true}
-          width= {400}
-          height= {300}
-          data= {this.state.chartData}
+          x = {this.state.x}
+          width= {this.state.width}
+          height= {this.state.height}
+          data= {this.props.data}
           chartSeries= {this.state.chartSeries}
-          x= {this.state.x}  
-        />
+        />}
       </div> 
       );
     }
