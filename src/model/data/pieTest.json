@@ -1,3 +1,5 @@
+{
+"testParameter":
 [
 {"Room":"Room 1","Energy_Saved_Year_kWH":2094}
 ,
@@ -7,3 +9,4 @@
 ,
 {"Room":"Room 4","Energy_Saved_Year_kWH":3713}
 ]
+}
