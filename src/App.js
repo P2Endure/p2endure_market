@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
+import FileUpload from 'file-loader';
 import './styles/css/app.css';
 import './styles/css/responsive.css';
 import NavBar from './styles/components/NavBar.js';
@@ -10,20 +11,33 @@ import Footer from './styles/components/footer.js';
 import Products from './styles/components/productBar.js';
 import Model from './model/model.js';
 import Diagram from './model/diagram.js';
+
 import { Row, Col} from 'react-bootstrap';
 import CompareValues from './MainContent/CompareValues/compareValues.js';
 import DrawerButton from './MainContent/ProductList/toggleDrawerButton.js';
 
-class App extends Component {
+class App extends Component { 
 
-constructor(props){
-  super();
-  this.state ={
-    isLoading: true,
-    buildingElements: []
+  state = {
+    data: null
+  };
+
+  componentDidMount() {
+      // Call our fetch function below once the component mounts
+    this.callBackendAPI()
+      .then(res => this.setState({ data: res.express }))
+      .catch(err => console.log(err));
   }
-}
+    // Fetches our GET route from the Express server. (Note the route we are fetching matches the GET route from server.js
+  callBackendAPI = async () => {
+    const response = await fetch('/express_backend');
+    const body = await response.json();
 
+    if (response.status !== 200) {
+      throw Error(body.message) 
+    }
+    return body;
+};
 
 render(){
   return( 
@@ -39,9 +53,9 @@ render(){
           <Model/>
         </Col >
         <Col  md={4} lg={10}>
- 
         </Col >
       </Row>
+     
         <Diagram/>            
     </div>
       <Footer/>
