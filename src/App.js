@@ -39,12 +39,25 @@ class App extends Component {
     return body;
 };
 
+uploadFile(e){
+  let f = e.target.files[0]
+  let form = new FormData()
+  form.append("file", f) 
+  fetch ("http://localhost:5000/upload", {
+    body: form,
+    method: "POST"
+  }).then(response => response.json())
+    .then(result => console.log(result))
+
+}
+
 render(){
   return( 
     <div className="App">
       <NavBar/> 
       <Sidebar/>
-      <Jumbo/>
+      <Jumbo/>  
+      <input type="file" onChange={this.uploadFile}/>
       <DrawerButton/>
       <Products/>  
     <div className="container-fluid">
