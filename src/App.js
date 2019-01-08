@@ -48,7 +48,17 @@ uploadFile(e){
     method: "POST"
   }).then(response => response.json())
     .then(result => console.log(result))
+}
 
+startEnergyPlus(e){
+  let f = e.target.files[0]
+  let form = new FormData()
+  form.append("file", f) 
+  fetch ("http://localhost:5000/upload", {
+    body: form,
+    method: "POST"
+  }).then(response => response.json())
+    .then(result => console.log(result))
 }
 
 render(){
@@ -60,6 +70,11 @@ render(){
       <input type="file" onChange={this.uploadFile}/>
       <DrawerButton/>
       <Products/>  
+      <button onclick="func()">start app</button>
+<script>
+  const func = () => fetch('http://localhost:5000/upload');
+</script>
+
     <div className="container-fluid">
       <Row>
         <Col  md={4} lg={2}>

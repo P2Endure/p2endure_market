@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import { Button, Panel, Grid, Row, Col, Thumbnail, Checkbox, Accordion } from 'react-bootstrap';
 import {LinkContainer} from 'react-router-bootstrap';
 
-const Products = props =>
+export default class Products extends Component{
+constructor(props){
+  super(props)
+    this.state
+};
+
+render(){
+return(
 <div className="products"> 
 <Grid>
   <Row>
@@ -81,4 +88,5 @@ const Products = props =>
   <hr id="line"/>
 </Grid> 
 </div>
-export default Products;
+  )}
+}
