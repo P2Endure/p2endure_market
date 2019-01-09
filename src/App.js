@@ -18,9 +18,10 @@ import DrawerButton from './MainContent/ProductList/toggleDrawerButton.js';
 
 class App extends Component { 
 
-  state = {
-    data: null
-  };
+constructor(props){
+  super(props)
+  this.state = {filename: null}
+}
 
   componentDidMount() {
       // Call our fetch function below once the component mounts
@@ -39,7 +40,7 @@ class App extends Component {
     return body;
 };
 
-uploadFile(e){
+uploadFile = (e) => {
   let f = e.target.files[0]
   let form = new FormData()
   form.append("file", f) 
@@ -47,18 +48,20 @@ uploadFile(e){
     body: form,
     method: "POST"
   }).then(response => response.json())
-    .then(result => console.log(result))
+    .then(result => {
+      console.log(result)
+      this.setState({
+      
+        filename: result.name
+      })
+
+    })
 }
 
-startEnergyPlus(e){
-  let f = e.target.files[0]
-  let form = new FormData()
-  form.append("file", f) 
-  fetch ("http://localhost:5000/upload", {
-    body: form,
-    method: "POST"
-  }).then(response => response.json())
-    .then(result => console.log(result))
+startEnergyPlus = (e) =>{
+  fetch (`http://localhost:5000/express_backend/${this.state.filename}`, {
+    method: "GET"
+  })
 }
 
 render(){
@@ -70,11 +73,7 @@ render(){
       <input type="file" onChange={this.uploadFile}/>
       <DrawerButton/>
       <Products/>  
-      <button onclick="func()">start app</button>
-<script>
-  const func = () => fetch('http://localhost:5000/upload');
-</script>
-
+      <button onClick={this.startEnergyPlus}>start app</button>
     <div className="container-fluid">
       <Row>
         <Col  md={4} lg={2}>
