@@ -1,14 +1,11 @@
 const express = require('express');
-const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
-const logger = require("morgan");
+
 const router = express.Router();
 const cors = require("cors");
 const fileUpload = require('express-fileupload');
 const app = express();
 
-// this is our MongoDB database
-const dbRoute = "mongodb://christophtub:Rojin1210@ds249992.mlab.com:49992/p2endure";
+
 
 const port = process.env.PORT || 5000;
 
@@ -26,7 +23,7 @@ app.get('/express_backend/:filename', (body, res) => {
   const f = body.params.filename;
 
   let child = spawn(
-    'C:\\EnergyPlusV9-0-1\\EP-Launch.exe',
+    'C:\\EnergyPlus-8-8-0\\EP-Launch.exe',
     [process.cwd()+"src/"+ f + ".idf"]
   );
   child.stdout.on('data', function (data) {
