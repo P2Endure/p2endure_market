@@ -1,30 +1,12 @@
-(function() {
-	function toJSONString( form ) {
-		var obj = {};
-		var elements = form.querySelectorAll( "input, select, textarea" );
-		for( var i = 0; i < elements.length; ++i ) {
-			var element = elements[i];
-			var name = element.name;
-			var value = element.value;
+const jsdom = require("jsdom");
+const { JSDOM } = jsdom;
 
-			if( name ) {
-				obj[ name ] = value;
-			}
-		}
+const dom = new JSDOM(`<!DOCTYPE html><p>Hello world</p>`);
+console.log(dom.window.document.querySelector("td").textContent); // "Hello world"
 
-		return JSON.stringify( obj );
-	}
+//JavaScript to Json
+//Loop with JavaScript from one text part to another and grap the values and sort them to the key
 
-	document.addEventListener( "DOMContentLoaded", function() {
-		var form = document.getElementById( "test" );
-		var output = document.getElementById( "output" );
-		form.addEventListener( "submit", function( e ) {
-			e.preventDefault();
-			var json = toJSONString( this );
-			output.innerHTML = json;
-
-		}, false);
-
-	});
-
-})();
+const a = ["Total Site Energy", "...", "..."]
+const k = a[0];
+const obj = { k: [a[1], a[2], a[3]]};
