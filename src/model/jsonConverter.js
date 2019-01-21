@@ -1,30 +1,30 @@
-(function() {
-	function toJSONString( form ) {
-		var obj = {};
-		var elements = form.querySelectorAll( "input, select, textarea" );
-		for( var i = 0; i < elements.length; ++i ) {
-			var element = elements[i];
-			var name = element.name;
-			var value = element.value;
+import React from 'react';
 
-			if( name ) {
-				obj[ name ] = value;
-			}
-		}
+const jsdom = require("jsdom");
+const { JSDOM } = jsdom;
+	
+const dom = new JSDOM(`<!DOCTYPE html><p>Hello world</p>`);
+console.log(dom.window.document.querySelector("p").textContent);
 
-		return JSON.stringify( obj );
-	}
+JSDOM.fromFile("./src/upload/Warszawa_primary_validatedTable.html", options).then(dom => {
+	console.log(dom.serialize());
+  });
 
-	document.addEventListener( "DOMContentLoaded", function() {
-		var form = document.getElementById( "test" );
-		var output = document.getElementById( "output" );
-		form.addEventListener( "submit", function( e ) {
-			e.preventDefault();
-			var json = toJSONString( this );
-			output.innerHTML = json;
+const  a = ["some text"];
 
-		}, false);
+var found = array1.find(function(element) {
+	return element;
+  })
 
-	});
+const k = a[0];
+const obj = { k: [a[1], a[2], a[3]]};
 
-})();
+export default ({}) => (
+ <div>
+
+ </div>
+)
+
+
+
+
