@@ -67,7 +67,7 @@ startEnergyPlus = (e) =>{
 render(){
   return( 
     <div className="App">
-      <NavBar/> 
+      <NavBar/>
       <Sidebar/>
       <Jumbo/>  
       <input type="file" onChange={this.uploadFile}/>
