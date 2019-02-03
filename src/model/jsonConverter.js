@@ -4,8 +4,12 @@ const { JSDOM } = jsdom;
 const strs = [];
 const obj = {};
 
-keys = ['Window-Wall Ratio']
-values = ['Gross Wall Area [m2]', "Above Ground Wall Area [m2]"]
+keys = ['End Uses', 'Electric Loads Satisfied', 'Comfort and Setpoint Not Met Summary']
+values = ['Heating', "Cooling", 
+          'Total Electricity End Uses', 
+          'Time Not Comfortable Based on Simple ASHRAE 55-2004', 
+          'Time Setpoint Not Met During Occupied Heating', 
+          'Time Setpoint Not Met During Occupied Cooling']
 
 JSDOM.fromFile("../upload/Warszawa_primary_validatedTable.html").then(dom => {
     dom.window.document.querySelectorAll('b, table').forEach(str => {
@@ -39,6 +43,9 @@ JSDOM.fromFile("../upload/Warszawa_primary_validatedTable.html").then(dom => {
                 })       
             })
             obj[tag] = props;
+            var json = JSON.stringify(obj)
+            var fs = require('fs');
+            fs.writeFile('myjsonfile.json', json, 'utf8');
         }
     })
 console.log(obj)
