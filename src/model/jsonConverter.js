@@ -5,11 +5,8 @@ const strs = [];
 const obj = {};
 
 keys = ['End Uses', 'Electric Loads Satisfied', 'Comfort and Setpoint Not Met Summary']
-values = ['Heating', "Cooling", 
-          'Total Electricity End Uses', 
-          'Time Not Comfortable Based on Simple ASHRAE 55-2004', 
-          'Time Setpoint Not Met During Occupied Heating', 
-          'Time Setpoint Not Met During Occupied Cooling']
+attributes = ['Electricity [kWh]', 'Natural Gas [kWh]', 'Natural Gas [kWh]2', 'Natural Gas [kWh]3', 'Natural Gas [kWh]4', 'Natural Gas [kWh]5']
+values = ['Heating']       
 
 JSDOM.fromFile("../upload/Warszawa_primary_validatedTable.html").then(dom => {
     dom.window.document.querySelectorAll('b, table').forEach(str => {
@@ -20,11 +17,10 @@ JSDOM.fromFile("../upload/Warszawa_primary_validatedTable.html").then(dom => {
         if (keys.includes(tag)) {
             let table = strs[i + 1];
             let rows = table.split("\n").filter(line => line.replace(/\s/g, '').length);
-
             let props = {};
 
             rows.forEach( (row, i) => {
-              values.forEach( v => {
+                values.forEach( v => {
                   if (row.includes(v)) {
                       let total = [];
                       let counter = 1;
@@ -33,19 +29,18 @@ JSDOM.fromFile("../upload/Warszawa_primary_validatedTable.html").then(dom => {
                           if (isNaN(value)) {
                               break;
                           } else {
-                              total.push(value);
-                              counter += 1
+                            total += value;
+                            counter += 1
                             }
-
                         }
-                        props[v] = total; 
-                    }
-                })       
-            })
+                        props[v] = total;   
+                    }  
+                })
+        })
             obj[tag] = props;
             var json = JSON.stringify(obj)
             var fs = require('fs');
-            fs.writeFile('myjsonfile.json', json, 'utf8');
+            fs.writeFile('../upload/modelOutput.json', json, 'utf8');
         }
     })
 console.log(obj)

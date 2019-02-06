@@ -1,0 +1,40 @@
+{
+    "testParameter_1":
+    [
+    {"case":"A","EnergySaving":""}
+    ,
+    {"case":"B","EnergySaving":""}
+    ,
+    {"case":"C","EnergySaving":""}
+    ,
+    {"case":"D","EnergySaving":""}
+    ,
+    {"case":"E","EnergySaving":""}
+    ,
+    {"case":"F","EnergySaving":""}
+    ,
+    {"case":"G","EnergySaving":""}
+    ],
+    
+
+    
+    "testParameter_2":
+    [
+        {"Room 1":"","Room 2":"","Room 3":"","Room 4":"", "index":""}
+        ,
+        {"Room 1":"","Room 2":"","Room 3":"","Room 4":"", "index":""}
+    ],
+
+    
+        "testParameter_3":
+        [
+        {"Room":"Room 1","Energy_Saved_Year_kWH":""}
+        ,
+        {"Room":"Room 2","Energy_Saved_Year_kWH":""}
+        ,
+        {"Room":"Room 3","Energy_Saved_Year_kWH":""}
+        ,
+        {"Room":"Room 4","Energy_Saved_Year_kWH":""}
+        ]
+    }
+

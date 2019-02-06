@@ -10,15 +10,16 @@ import data_3 from './data/lineTest_2.json';
 import data_4 from './data/lineTest.json';
 import data_5 from './data/pieTest.json';
 import data_6 from './data/pieTest_2.json';
+import startData from './data/startValues.json';
 
 export default class Diagram extends React.Component{
 
   constructor(props){
     super(props);
     this.state = {
-      test : data_1.testParameter,
-      testLine : data_3.testParameter,
-      testPie : data_5.testParameter
+      test : startData.testParameter_1,
+      testLine : startData.testParameter_2,
+      testPie : startData.testParameter_3
     }
   }
 
@@ -35,7 +36,7 @@ render(){
   return(
     <div>
     <button  onClick={()=>this.changeTest()}>
-    TestButton
+    Show simulation results
     </button>
  
     <Row>

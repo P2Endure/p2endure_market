@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
-import FileUpload from 'file-loader';
 import './styles/css/app.css';
 import './styles/css/responsive.css';
 import NavBar from './styles/components/NavBar.js';
 import Sidebar from './styles/components/Sidebar.js';
 import Jumbo from './styles/components/jumbo.js';
+import Uploader from './styles/components/uploader';
 import Footer from './styles/components/footer.js';
 import Products from './styles/components/productBar.js';
 import Model from './model/model.js';
@@ -40,41 +40,16 @@ constructor(props){
     return body;
 };
 
-uploadFile = (e) => {
-  let f = e.target.files[0]
-  let form = new FormData()
-  form.append("file", f) 
-  fetch ("http://localhost:5000/upload", {
-    body: form,
-    method: "POST"
-  }).then(response => response.json())
-    .then(result => {
-      console.log(result)
-      this.setState({
-      
-        filename: result.name
-      })
-
-    })
-}
-
-startEnergyPlus = (e) =>{
-  fetch (`http://localhost:5000/express_backend/${this.state.filename}`, {
-    method: "GET"
-  })
-}
-
 render(){
   return( 
     <div className="App">
       <NavBar/>
       <Sidebar/>
-      <Jumbo/>  
-      <input type="file" onChange={this.uploadFile}/>
+      <Jumbo/>
       <DrawerButton/>
       <Products/>  
-      <button onClick={this.startEnergyPlus}>start app</button>
-    <div className="container-fluid">
+      <Uploader/>
+      <div className="container-fluid">
       <Row>
         <Col  md={4} lg={2}>
           <Model/>
@@ -82,7 +57,6 @@ render(){
         <Col  md={4} lg={10}>
         </Col >
       </Row>
-     
         <Diagram/>            
     </div>
       <Footer/>

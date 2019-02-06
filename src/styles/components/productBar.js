@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import { Button, Panel, Grid, Row, Col, Thumbnail, Checkbox, Accordion } from 'react-bootstrap';
-import {LinkContainer} from 'react-router-bootstrap';
 
 export default class Products extends Component{
 constructor(props){
@@ -80,9 +79,7 @@ return(
       </Thumbnail>
     </Col>
     <Col xs={6} md={2}>
-      <LinkContainer to="/Data_Screen">
-       <Button id="calculation">Start Calculation</Button>
-      </LinkContainer> 
+
     </Col>
    </Row>
   <hr id="line"/>

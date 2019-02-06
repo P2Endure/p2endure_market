@@ -7,15 +7,15 @@ export default class Bar extends React.Component{
     this.state ={
       chartSeries : [
         {
-          field: 'EnergySaving',
-          name: 'EnergySaving',
+          field: 'End Uses',
+          name: 'End Uses', //name, which headlines the chart
           categoricalColors: '#A07A19',
         }
         ],
       x : function(d) { return d.case; },
       xScale : 'ordinal',
       //var xLabel : "Case";
-      yLabel : 'EnergySaving',
+      yLabel : 'End Uses',
       //var yTicks : [10, "%"];
       width : 900,
       height : 300,
