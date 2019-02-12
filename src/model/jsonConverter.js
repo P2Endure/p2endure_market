@@ -4,7 +4,7 @@ const { JSDOM } = jsdom;
 const strs = [];
 const obj = {};
 
-keys = ['End Uses', 'Electric Loads Satisfied', 'Comfort and Setpoint Not Met Summary']
+keys = ['End Uses']
 attributes = ['Electricity [kWh]', 'Natural Gas [kWh]', 'Natural Gas [kWh]2', 'Natural Gas [kWh]3', 'Natural Gas [kWh]4', 'Natural Gas [kWh]5']
 values = ['Heating']       
 
@@ -16,12 +16,14 @@ JSDOM.fromFile("../upload/Warszawa_primary_validatedTable.html").then(dom => {
     strs.forEach( (tag, i) => {
         if (keys.includes(tag)) {
             let table = strs[i + 1];
-            let rows = table.split("\n").filter(line => line.replace(/\s/g, '').length);
+            let rows = table.split("\n").filter(line => line.replace(/\s/g, '').length);  
+            console.log(rows[0]);  
             let props = {};
 
             rows.forEach( (row, i) => {
                 values.forEach( v => {
                   if (row.includes(v)) {
+                    console.log(row);
                       let total = [];
                       let counter = 1;
                       while (true) {
@@ -29,19 +31,19 @@ JSDOM.fromFile("../upload/Warszawa_primary_validatedTable.html").then(dom => {
                           if (isNaN(value)) {
                               break;
                           } else {
-                            total += value;
+                            total.push(value);
                             counter += 1
                             }
                         }
-                        props[v] = total;   
+                        props[v] = total;
                     }  
                 })
         })
             obj[tag] = props;
-            var json = JSON.stringify(obj)
+           /*  var json = JSON.stringify(obj)
             var fs = require('fs');
-            fs.writeFile('../upload/modelOutput.json', json, 'utf8');
+            fs.writeFile('../upload/modelOutput.json', json, 'utf8'); */
         }
     })
-console.log(obj)
+
 })
