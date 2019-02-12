@@ -1,1 +1,9 @@
-{"End Uses":{"Heating":"0000174646.260"}}
+[
+    {
+        "End Uses":{
+        "Keyvalue": "Key",    
+        "Materialname":"Test ",
+        "Heating":"0000174646.260"
+        }
+    }
+]
