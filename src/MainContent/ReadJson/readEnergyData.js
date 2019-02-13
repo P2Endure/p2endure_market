@@ -49,11 +49,11 @@ onSubmit= e =>{
       alert(this.json2);
   }
 
-  onChange(){
+/*   onChange(){
     var fs = require('fs'); 
     var json = JSON.stringify(obj)   
     fs.writeFile('../../upload/modelOutput_1.json', json); 
-  }
+  } */
 
   render() {
       const fields = this.props.fields;
@@ -69,13 +69,13 @@ onSubmit= e =>{
                                             Name={energyValues.Keyvalue} 
                                             Materialname={energyValues.Materialname} 
                                             Heating={energyValues.Heating} />);
-            obj[arr]= children;
+
     });
     
 return(
     <div>
         <ul>
-            <Button onChange={this.onChange()}>Anzeigen</Button>
+            {children}
         </ul>
     </div>
     )
