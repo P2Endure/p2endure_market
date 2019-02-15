@@ -4,19 +4,32 @@ const router = express.Router();
 const cors = require("cors");
 const fileUpload = require('express-fileupload');
 const app = express();
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const config = require('./backend/DB');
+const checkRoute = require('./backend/routes/check.route');
 
-
-
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 4000;
 
 const fs = require("fs")
 
 const spawn = require('child_process').spawn;
 
+mongoose.Promise = global.Promise;
+mongoose.connect(config.DB, { useNewUrlParser: true }).then(
+  () => {console.log('Database is connected') },
+  err => { console.log('Can not connect to the database'+ err)}
+);
+
 // console.log that your server is up and running
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
 app.use(cors())
+
+app.use(bodyParser.json());
+
+
+app.use('/upload', checkRoute);
 
 // create a GET route
 app.get('/express_backend/:filename', (body, res) => {
