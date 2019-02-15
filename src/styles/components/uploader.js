@@ -11,7 +11,7 @@ constructor(props){
         let f = e.target.files[0]
         let form = new FormData()
         form.append("file", f) 
-        fetch ("http://localhost:5000/upload", {
+        fetch ("http://localhost:4000/upload", {
           body: form,
           method: "POST"
         }).then(response => response.json())
@@ -26,7 +26,7 @@ constructor(props){
       }
       
       startEnergyPlus = (e) =>{
-        fetch (`http://localhost:5000/express_backend/${this.state.filename}`, {
+        fetch (`http://localhost:4000/express_backend/${this.state.filename}`, {
           method: "GET"
         })
       }

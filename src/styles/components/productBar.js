@@ -3,15 +3,14 @@ import axios from 'axios';
 import { Button, Panel, Grid, Row, Col, Thumbnail, Checkbox, Accordion } from 'react-bootstrap';
 
 export default class Products extends Component{
-constructor(props){
-  super(props)
-    this.state = {
+
+   state = {
       isFirst: false,
       isSecond: false,
       isThird: false,
       isFourths: false,
       isFiths: false
-  }
+  
 };
 
 toggleChangeFirst = () => {
@@ -45,26 +44,21 @@ toggleChangeFive = () => {
 }
 
 onSubmit = (e) => {
-  let f = e.target.files[0]
-  let form = new FormData()
-  form.append("file", f) 
-  fetch ("http://localhost:5000/upload/underUpload", {
-    body: form,
-    method: "POST"
-  }).then(response => response.json())
-    .then(result => {
-      console.log(result)
-      this.setState({
-      
-        filename: result.name
-      })
-
-    })
-}
-
+  e.preventDefault();
+  let arr = [];
+  for (var key in this.state) {
+    if(this.state[key] === true) {
+      arr.push(key);
+    }
+  }
+  let data = {
+    check: arr.toString() 
+  };
+  axios.post('http://localhost:4000/checks/add', data)
+        .then(res => console.log(res.data));
+    }
 
 render(){
-let { data, checked } = this.state;
 return(
 <div className="products"> 
 <Grid>
@@ -83,6 +77,7 @@ return(
                 checked={this.state.isFirst}
                 onChange={this.toggleChangeFirst}
               />
+ 
         </form>
         </p>
       </Thumbnail>
@@ -100,6 +95,7 @@ return(
               <input type="checkbox"
                 checked={this.state.isSecond}
                 onChange={this.toggleChangeSecond}
+              
               />
         </form>
         </p>
@@ -162,7 +158,7 @@ return(
     <Col xs={6} md={2}>
     </Col>
    </Row>
-   <button className="btn btn-primary">
+   <button onClick={this.onSubmit} className="btn btn-primary">
               Submit         
     </button>
   <hr id="line"/>
