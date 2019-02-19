@@ -49,7 +49,7 @@ export default class DrawerButton extends React.Component {
                 <MenuItem
                 primaryText="Glazing"
                 menuItems={[
-                    <GlazingForm  onSubmit ={fields => this.onSubmit(fields)} />,
+                    <GlazingForm  onSubmit ={fields => this.onSubmit(fields)} />,    
                   ]}
                 />,
                 <MenuItem

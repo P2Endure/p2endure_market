@@ -1,7 +1,7 @@
 // CheckRoute.js
 
 const checkRoute = require('express').Router(),
-  CheckModel = require('../models/CheckModel');
+  CheckModel = require('./models/CheckModel');
 
   checkRoute.route('/add').post(function (req, res) {
     let checkmodel = new CheckModel(req.body);

@@ -15,6 +15,7 @@ import Diagram from './model/diagram.js';
 import { Row, Col} from 'react-bootstrap';
 import CompareValues from './MainContent/CompareValues/compareValues.js';
 import DrawerButton from './MainContent/ProductList/toggleDrawerButton.js';
+import AddProductForm from './AddProductForm';
 
 class App extends Component { 
 
@@ -48,6 +49,7 @@ render(){
       <Jumbo/>
       <DrawerButton/>
       <Products/>  
+      <AddProductForm/>
       <Uploader/>
       <div className="container-fluid">
       <Row>

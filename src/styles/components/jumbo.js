@@ -1,34 +1,36 @@
 import React, { Component } from 'react';
 
-import { Jumbotron, Panel, Accordion} from 'react-bootstrap';
+import { Jumbotron, Collapse, Panel, Accordion} from 'react-bootstrap';
 
 class Jumbo extends Component{
 
-constructor(props){
-    super(props)
-        this.state = {};
+constructor(props, context){
+    super(props, context)
+        this.state = {
+            open: false,
+        };
 };
- 
-getInitialState() {
-    return {
-        activeKey: '1'
-    };
-}
-      
-handleSelect(activeKey) {
-    this.setState({ activeKey });
-};
-
+     
 render(){
+    const {open} = this.state
     return(
         <Jumbotron id="jumbo">
-            {this.props.children}
                 <h3>Welcome to the</h3> 
                 <h1>P2Endure E-Marketplace</h1>
          <Accordion>
-            <Panel header="Info" eventKey="1">
+            <Panel header="Info" 
+                onClick={() => this.setState({ open: !open })} 
+                aria-controls="example-collapse-text"
+                aria-expanded={open}
+            >
                 Hier Text!!!
             </Panel>
+            <Collapse in={this.state.open}>
+          <div>
+           Text
+          </div>
+        </Collapse>
+      
          </Accordion>
         </Jumbotron>
     )}    

@@ -1,19 +1,15 @@
 const express = require('express');
-
+const app = express();
 const router = express.Router();
 const cors = require("cors");
 const fileUpload = require('express-fileupload');
-const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const config = require('./backend/DB');
-const checkRoute = require('./backend/routes/check.route');
-
+const config = require('./routes/DB');
 const port = process.env.PORT || 4000;
-
 const fs = require("fs")
-
 const spawn = require('child_process').spawn;
+const checkRoute = require('./routes/check.route');
 
 mongoose.Promise = global.Promise;
 mongoose.connect(config.DB, { useNewUrlParser: true }).then(
@@ -25,11 +21,8 @@ mongoose.connect(config.DB, { useNewUrlParser: true }).then(
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
 app.use(cors())
-
 app.use(bodyParser.json());
-
-
-app.use('/upload', checkRoute);
+app.use('/checks', checkRoute);
 
 // create a GET route
 app.get('/express_backend/:filename', (body, res) => {

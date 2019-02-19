@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Button, Panel, Grid, Row, Col, Thumbnail, Checkbox, Accordion } from 'react-bootstrap';
+import {Panel, Grid, Row, Col, Thumbnail, Accordion } from 'react-bootstrap';
+import materialData from '../../model/data/ProductData/Material.js'
 
 export default class Products extends Component{
 
@@ -9,13 +10,13 @@ export default class Products extends Component{
       isSecond: false,
       isThird: false,
       isFourths: false,
-      isFiths: false
-  
-};
+      isFiths: false,
+    } 
 
 toggleChangeFirst = () => {
   this.setState(prevState => ({
     isFirst: !prevState.isFirst,
+    materialData:{materialData},
   }));
 }
 
@@ -55,8 +56,16 @@ onSubmit = (e) => {
     check: arr.toString() 
   };
   axios.post('http://localhost:4000/checks/add', data)
-        .then(res => console.log(res.data));
-    }
+        .then(res => console.log(res.data))
+        .then("DATA ADDED!")
+  }
+
+ 
+change = e =>{
+  this.setState({
+      [e.target.name]: e.target.value
+  });
+};
 
 render(){
 return(
@@ -76,6 +85,7 @@ return(
               <input type="checkbox"
                 checked={this.state.isFirst}
                 onChange={this.toggleChangeFirst}
+                value={console.log(this.state.materialData)} 
               />
  
         </form>
