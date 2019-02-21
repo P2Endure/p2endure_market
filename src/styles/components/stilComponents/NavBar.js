@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import { Button, Jumbotron, Panel, Grid, Row, Col, Table, Image, Thumbnail, Checkbox, Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap'; 
 
 class NavBar extends Component{
 render(){
   return(
-  <body>
+
   <header id="header"> 
         <h1>
           P2Endure e-Marketplace
@@ -27,7 +25,6 @@ render(){
           </ul>
         </nav>
     </header>
-   </body> 
   )
  }
 } 

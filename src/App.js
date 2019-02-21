@@ -3,19 +3,17 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
 import './styles/css/app.css';
 import './styles/css/responsive.css';
-import NavBar from './styles/components/NavBar.js';
-import Sidebar from './styles/components/Sidebar.js';
-import Jumbo from './styles/components/jumbo.js';
+import ProductUploadIndex from './styles/components/productComponents/components/test';
+import NavBar from './styles/components/stilComponents/NavBar';
+import Sidebar from './styles/components/stilComponents/Sidebar';
+import Jumbo from './styles/components/stilComponents/jumbo';
 import Uploader from './styles/components/uploader';
-import Footer from './styles/components/footer.js';
-import Products from './styles/components/productBar.js';
+import Footer from './styles/components/stilComponents/footer';
+import Products from './styles/components/stilComponents/productBar';
 import Model from './model/model.js';
 import Diagram from './model/diagram.js';
-
 import { Row, Col} from 'react-bootstrap';
-import CompareValues from './MainContent/CompareValues/compareValues.js';
-import DrawerButton from './MainContent/ProductList/toggleDrawerButton.js';
-import AddProductForm from './AddProductForm';
+
 
 class App extends Component { 
 
@@ -47,9 +45,8 @@ render(){
       <NavBar/>
       <Sidebar/>
       <Jumbo/>
-      <DrawerButton/>
-      <Products/>  
-      <AddProductForm/>
+      <ProductUploadIndex/>
+      <Products/>
       <Uploader/>
       <div className="container-fluid">
       <Row>
@@ -62,7 +59,6 @@ render(){
         <Diagram/>            
     </div>
       <Footer/>
-      <CompareValues/>
     </div>
     )
   }

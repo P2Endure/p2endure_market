@@ -49,6 +49,7 @@ module.exports = {
             // },
             hash: true,
             template: './src/index.html',
+            inject: false,
         }),
         new ExtractTextPlugin({
             filename: 'app.css',
