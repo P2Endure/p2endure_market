@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
 import './styles/css/app.css';
 import './styles/css/responsive.css';
-import ProductUploadIndex from './styles/components/productComponents/components/test';
+
 import NavBar from './styles/components/stilComponents/NavBar';
 import Sidebar from './styles/components/stilComponents/Sidebar';
 import Jumbo from './styles/components/stilComponents/jumbo';
@@ -45,7 +45,7 @@ render(){
       <NavBar/>
       <Sidebar/>
       <Jumbo/>
-      <ProductUploadIndex/>
+   
       <Products/>
       <Uploader/>
       <div className="container-fluid">

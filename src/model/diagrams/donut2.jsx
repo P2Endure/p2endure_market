@@ -1,22 +1,22 @@
 import React from 'react';
 import {PieChart} from 'react-d3-basic';
 
-export default class Donut extends React.Component {
+export default class Donut2 extends React.Component {
 
 constructor(props) {
     super(props);
     this.state = {
                    chartSeries : [
                     {
-                      "field": "Total Energy [kWh]",
-                      "name" : "Total Energy [kWh]",
+                      "field": "Winter Clothes [hr]",
+                      "name" : "Winter Clothes [hr]",
                     },
                     {
-                      "field": "Energy Per Total Building Area [kWh/m2]",
-                      "name" : "Energy Per Total Building Area [kWh/m2]",
+                      "field": "Summer Clothes [hr]",
+                      "name" : "Summer Clothes [hr]",
                     },
                     {
-                      "field": "Energy Per Conditioned Building Area [kWh/m2]",
+                      "field": "Summer or Winter Clothes [hr]",
                       "name" : "Energy Per Total Building Area [kWh/m2]",
                     },
                   ],
@@ -31,7 +31,7 @@ render(){
   return (
   <div className="panel">
     <div className="panel-inlay">
-      <h3>&#8364; Site and Source Energy</h3>
+      <h3>&#8364; Time_Not_Comfortable_Based_on_Simple_ASHRAE_55-2004</h3>
     </div>   
     <PieChart
       data= {this.props.data}

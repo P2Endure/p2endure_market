@@ -7,28 +7,33 @@ export default class Bar extends React.Component{
     this.state ={
       chartSeries : [
         {
-          field: 'End Uses',
-          name: 'End Uses', //name, which headlines the chart
+          field: 'value',
+          name: 'Heating',
           categoricalColors: '#A07A19',
+        },
+        {
+          field: 'value',
+          name: 'Cooling',
+          categoricalColors: '#A07A44',
         }
         ],
-      x : function(d) { return d.case; },
+      x : function(d) { return d.name; },
       xScale : 'ordinal',
       //var xLabel : "Case";
-      yLabel : 'End Uses',
+      yLabel : 'EnergySaving',
       //var yTicks : [10, "%"];
       width : 900,
       height : 300,
       title : 'Bar Chart',
     }
-  }
+}
 
 render(){
 return (
   <div className="panel">
     <div className="panel-inlay">
-      <h3>&#8721; Energy Saving</h3>
-    </div>  
+      <h3>&#8721; End Uses</h3>
+    </div>   
         <div>     
             {this.props.data && <BarChart
               title= {this.statetitle}
