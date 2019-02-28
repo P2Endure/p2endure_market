@@ -27,7 +27,6 @@ app app-header{
   float: left;
 }
 
-
 }
 @media screen and (max-width: 970px) {    /* Tablet  */
 body, header,main, footer {width:100%;}

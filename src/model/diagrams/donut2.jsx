@@ -1,5 +1,6 @@
 import React from 'react';
 import {PieChart} from 'react-d3-basic';
+import { inherits } from 'util';
 
 export default class Donut2 extends React.Component {
 

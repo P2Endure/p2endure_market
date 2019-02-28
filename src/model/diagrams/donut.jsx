@@ -24,14 +24,15 @@ constructor(props) {
             name: function(d){return d.name; },
             width: 300,
             height: 300, 
-            innerRadius: 10,    
+            innerRadius: 10,
                 };
 }
+
 render(){
   return (
   <div className="panel">
     <div className="panel-inlay">
-      <h3>&#8364; Site and Source Energy</h3>
+      <h3 >&#8364; Site and Source Energy</h3>
     </div>   
     <PieChart
       data= {this.props.data}

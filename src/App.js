@@ -45,19 +45,18 @@ render(){
       <NavBar/>
       <Sidebar/>
       <Jumbo/>
-   
       <Products/>
       <Uploader/>
-      <div className="container-fluid">
-      <Row>
-        <Col  md={4} lg={2}>
-          <Model/>
-        </Col >
-        <Col  md={4} lg={10}>
-        </Col >
-      </Row>
-        <Diagram/>            
-    </div>
+        <div className="container-fluid">
+          <Row>
+            <Col  md={4} lg={4}>
+              <Model/>
+            </Col >
+            <Col  md={8} lg={8}>
+              <Diagram/>  
+            </Col >
+          </Row>  
+      </div>
       <Footer/>
     </div>
     )

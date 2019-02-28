@@ -97,38 +97,7 @@ render(){
     Show simulation results
     </button>
     <Row>
-        <Col md={8} lg={8}>
-        <div>
-            <form>
-              <select>
-                <option value="heating" onClick={()=>this.handleCoolingChange()}>Heating</option>
-                <option value="cooling" onClick={()=>this.handleHeatinChange()}>Cooling</option>
-                <option value="cooling" onClick={()=>this.handleLightningChange()}>Interior Lighting</option>
-              </select>
-            </form>
-          <Bar 
-           data = {this.state.valueBar}
-          />
-        </div>    
-        </Col>
-        <Col md={4} lg={4}>
-        <div className="panel">
-          <div className="panel-inlay">
-            <h3>&#8721; Additional</h3>
-            </div> 
-            <div>
-            <div>{this.state.valueSingle[0].name} :</div>
-            <div>{this.state.valueSingle[0].value}</div>
-          </div>
-        </div>
-      
-        {/*  <Line 
-          data = {this.state.testLine}
-         />*/}
-        </Col>
-    </Row>
-     <Row>
-        <Col md={8} lg={4}>  
+        <Col md={6} lg={6}>
         <div>
         <form>
               <select>
@@ -143,7 +112,34 @@ render(){
           />
         </div>
         </Col>
-        <Col md={8} lg={4}>  
+        <Col md={2} lg={4}>
+        <div className="panel">
+          <div className="panel-inlay">
+            <h3>&#8721; Additional</h3>
+            </div> 
+            <div>
+            <div>{this.state.valueSingle[0].name} :</div>
+            <div>{this.state.valueSingle[0].value}</div>
+          </div>
+        </div>
+        </Col>
+    </Row>
+     <Row>
+        <Col md={6} lg={6}>  
+        <div>
+            <form>
+              <select>
+                <option value="heating" onClick={()=>this.handleCoolingChange()}>Heating</option>
+                <option value="cooling" onClick={()=>this.handleHeatinChange()}>Cooling</option>
+                <option value="cooling" onClick={()=>this.handleLightningChange()}>Interior Lighting</option>
+              </select>
+            </form>
+          <Bar 
+           data = {this.state.valueBar}
+          />
+        </div>  
+        </Col>
+        <Col md={6} lg={6}>  
         <div>
         <form>
               <select>

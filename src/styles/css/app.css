@@ -426,11 +426,16 @@ h4.panel-title{
   border-style: solid;
   border-radius: 4px;
   margin-top: 5px;
+  text-align: center;
+  width: 100%;
+  height: 100%;
 }
 
 .panel-inlay{
   background-color: #F5F5F5;
-  border-bottom: 2px solid #ddd
+  border-bottom: 2px solid #ddd;
+  width: 100%;
+  height: 100%;
 }
 
 /*********************************
@@ -465,7 +470,8 @@ SVG elements
 *********************************/
 
 .react-d3-core__container_svg{
-  width: 99%;
+  width: inherit;
+  height:inherit;
 }
 
 .react-d3-core__container_svg  g{
