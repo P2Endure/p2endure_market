@@ -38,7 +38,7 @@ render(){
             <input type="file" onChange={this.uploadFile}/> 
           </div>
           <div className="start-simulation">
-            <button className="action-Button" onClick={this.startEnergyPlus}>start app</button>
+            <button className="action-Button" onClick={this.startEnergyPlus}>Start Simulation</button>
           </div>
         </div>  
     )}
