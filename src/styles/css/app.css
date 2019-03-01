@@ -478,6 +478,12 @@ SVG elements
   transform: translate(160, 40);
 }
 
+.react-d3-core__legend.legend{
+  width: 150%;
+  text-align: left;
+} 
+
+
 /*********************************
 Footer
 *********************************/

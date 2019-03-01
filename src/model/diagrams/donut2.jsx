@@ -32,7 +32,7 @@ render(){
   return (
   <div className="panel">
     <div className="panel-inlay">
-      <h3>&#8364; Time_Not_Comfortable_Based_on_Simple_ASHRAE_55-2004</h3>
+      <h3> Time_Not_Comfortable (ASHRAE_55-2004)</h3>
     </div>   
     <PieChart
       data= {this.props.data}

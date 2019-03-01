@@ -98,7 +98,7 @@ render(){
     </button>
     <Row>
         <Col md={6} lg={6}>
-        <div>
+        <div className="panel-complete">
         <form>
               <select>
                 <option value="Net_Site_Energy" onClick={()=>this.handleTotalSiteEnergyChange()}>Total Site Energy</option>
@@ -113,6 +113,7 @@ render(){
         </div>
         </Col>
         <Col md={2} lg={4}>
+        <div className="panel-complete">
         <div className="panel">
           <div className="panel-inlay">
             <h3>&#8721; Additional</h3>
@@ -121,7 +122,7 @@ render(){
             <div>{this.state.valueSingle[0].name} :</div>
             <div>{this.state.valueSingle[0].value}</div>
           </div>
-        </div>
+        </div>\</div>
         </Col>
     </Row>
      <Row>

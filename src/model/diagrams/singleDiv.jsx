@@ -13,14 +13,12 @@ constructor(props) {
 
 render(){
   return (
-  <div className="panel">
+  <div >
     <div className="panel-inlay">
       <h3>&#8364; Additional</h3>
-    </div>  
-    <div className="panel">
-       
+    </div> 
+    <div >
     </div>
-   
     
   </div >     
     );

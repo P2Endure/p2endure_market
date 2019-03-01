@@ -22,7 +22,7 @@ export default class Bar extends React.Component{
       //var xLabel : "Case";
       yLabel : 'EnergySaving',
       //var yTicks : [10, "%"];
-      width : 900,
+      width : 500,
       height : 300,
       title : 'Bar Chart',
     }
