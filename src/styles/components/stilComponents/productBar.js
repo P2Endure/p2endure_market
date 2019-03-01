@@ -168,7 +168,7 @@ return(
     <Col xs={6} md={2}>
     </Col>
    </Row>
-   <button onClick={this.onSubmit} className="btn btn-primary">
+   <button onClick={this.onSubmit} className="action-Button_2">
               Submit         
     </button>
   <hr id="line"/>

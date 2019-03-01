@@ -15,7 +15,7 @@ render(){
   return (
   <div >
     <div className="panel-inlay">
-      <h3>&#8364; Additional</h3>
+      <h5>&#8364; Additional</h5>
     </div> 
     <div >
     </div>

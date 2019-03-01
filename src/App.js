@@ -10,7 +10,7 @@ import Jumbo from './styles/components/stilComponents/jumbo';
 import Uploader from './styles/components/uploader';
 import Footer from './styles/components/stilComponents/footer';
 import Products from './styles/components/stilComponents/productBar';
-import Model from './model/model.js';
+
 import Diagram from './model/diagram.js';
 import { Row, Col} from 'react-bootstrap';
 
@@ -47,16 +47,7 @@ render(){
       <Jumbo/>
       <Products/>
       <Uploader/>
-        <div className="container-fluid">
-          <Row>
-            <Col  md={4} lg={4}>
-              <Model/>
-            </Col >
-            <Col  md={8} lg={8}>
-              <Diagram/>  
-            </Col >
-          </Row>  
-      </div>
+      <Diagram/>  
       <Footer/>
     </div>
     )

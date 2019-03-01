@@ -2,13 +2,13 @@
 "Site_and_Source_Energy":
     {"Total_Site_Energy":
         [
-            {"name":"Total Energy [kWh]","value":206728.27},
+            {"name":"Total Energy [kWh]","value":6728.27},
             {"name":"Energy Per Total Building Area [kWh/m2]","value":150.7},
             {"name":"Energy Per Conditioned Building Area [kWh/m2]","value":162.6}
         ],
     "Net_Site_Energy":
         [
-            {"name":"Total Energy [kWh]","value":206728.27},
+            {"name":"Total Energy [kWh]","value":228.27},
             {"name":"Energy Per Total Building Area [kWh/m2]","value":150.7},
             {"name":"Energy Per Conditioned Building Area [kWh/m2]","value":162.6}
         ],
@@ -20,7 +20,7 @@
         ],
     "Net_Source_Energy":
         [
-            {"name":"Total Energy [kWh]","value":704841.33},
+            {"name":"Total Energy [kWh]","value":841.33},
             {"name":"Energy Per Total Building Area [kWh/m2]","value":513.82},
             {"name":"Energy Per Conditioned Building Area [kWh/m2]","value":554.4}
         ]

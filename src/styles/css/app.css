@@ -24,6 +24,7 @@ Layout jumbotron
 
 #line{
   border-top: 1.5px solid wheat;
+  margin-right: 20%;
 }
 
 body {
@@ -63,7 +64,6 @@ form button {
 }
 
 form {
-  width: 20%;
   background: white;
   display: inline-block;
   overflow: hidden;
@@ -71,8 +71,6 @@ form {
   display: flex;
   border-radius: .2em;
   border: solid 4px white;
-  -webkit-box-shadow: 0 1px 14px rgba(0, 0, 0, .12);
-  box-shadow: 0 1px 14px rgba(0, 0, 0, .12);
 }
 
 .uploadForm{
@@ -398,6 +396,10 @@ h1, h2{
   color: darkgrey;
 }
 
+.line{
+  height: 500px
+}
+
 h4.panel-title{
   font-size: 13px;
 }
@@ -422,14 +424,15 @@ h4.panel-title{
 
 .panel{
   border-color: #ddd;
-  border-width: 2px;
+  border-width: 1px;
   border-style: solid;
-  border-radius: 4px;
+  border-radius: 0px;
   margin-top: 5px;
   text-align: center;
   width: 100%;
   height: 100%;
 }
+
 
 .panel-inlay{
   background-color: #F5F5F5;
@@ -446,25 +449,58 @@ Button
 }
 
 .start-simulation{
-  margin-left: 80%;
+  margin-left: 0%;
+}
+
+.upload-action{
+  margin-left: 15.5%;
 }
 
 .action-Button{
   margin-top: 230px;
   display: inline-block;
   border-radius: 4px;
-  background-color: #e5e4f0;
-  border: none;
+  background-color: #f5f5f5;
+  border: solid;
+  border-color: #ddd;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 4px;
   color: black;
   text-align: center;
-  font-size: 18px;
-  padding: 10px;
-  width: 100px;
+  padding: 1px;
+  width: 150px;
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
+  font-size: 15px;
 }
 
+.action-Button_2{
+  margin-left:30%;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  margin-right:5%;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+  border: solid;
+  border-color: #ddd;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 4px;
+  color: black;
+  text-align: center;
+  padding: 1px;
+  width: 150px;
+  transition: all 0.5s;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+input[type="file"] {
+  display: none;
+}
 /*********************************
 SVG elements
 *********************************/
@@ -479,7 +515,7 @@ SVG elements
 }
 
 .react-d3-core__legend.legend{
-  width: 150%;
+  width: 400px;
   text-align: left;
 } 
 
