@@ -26,7 +26,7 @@ constructor(props) {
             name: function(d){return d.name; },
             width: 300,
             height: 300, 
-            innerRadius: 10,
+            innerRadius: 40,
                 };
 }
 

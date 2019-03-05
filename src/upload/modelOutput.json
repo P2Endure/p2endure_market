@@ -2,13 +2,13 @@
 "Site_and_Source_Energy":
     {"Total_Site_Energy":
         [
-            {"name":"Total Energy [kWh]","value":6728.27},
+            {"name":"Total Energy [kWh]","value":206728.27},
             {"name":"Energy Per Total Building Area [kWh/m2]","value":150.7},
             {"name":"Energy Per Conditioned Building Area [kWh/m2]","value":162.6}
         ],
     "Net_Site_Energy":
         [
-            {"name":"Total Energy [kWh]","value":228.27},
+            {"name":"Total Energy [kWh]","value":206728.27},
             {"name":"Energy Per Total Building Area [kWh/m2]","value":150.7},
             {"name":"Energy Per Conditioned Building Area [kWh/m2]","value":162.6}
         ],
@@ -20,7 +20,7 @@
         ],
     "Net_Source_Energy":
         [
-            {"name":"Total Energy [kWh]","value":841.33},
+            {"name":"Total Energy [kWh]","value":704841.33},
             {"name":"Energy Per Total Building Area [kWh/m2]","value":513.82},
             {"name":"Energy Per Conditioned Building Area [kWh/m2]","value":554.4}
         ]
@@ -53,7 +53,7 @@
             {"name":"District Heating","value":0},
             {"name":"Water","value":0}
         ]
-            },
+    },
 "Comfort_and_Setpoint_Not_Met_Summary":
     {"Heating":
         [
@@ -87,8 +87,23 @@
 "EAp2_6_Energy_Use_Summary":
     {"Additional":
         [
-            {"name":"Process Subtotal","value":13140.08},
-            {"name":"Total Energy Use","value":187786.48}
-        ]
+            {"name":"Process Subtotal [kWh]","value":13140.08},
+            {"name":"Total Energy Use [kWh]","value":187786.48}
+        ],
+    "Natural_Gas":
+        [
+            {"name":"Process Subtotal [kWh]","value":0.0},
+            {"name":"Total Energy Use [kWh]","value":0.0}
+        ],
+    "Total":
+        [
+            {"name":"Process Subtotal [kWh]","value":20148.05},
+            {"name":"Total Energy Use [kWh]","value":206728.43}
+        ],
+    "Electricity":
+        [
+            {"name":"Process Subtotal [kWh]","value":7007.97},
+            {"name":"Total Energy Use [kWh]","value": 18941.95}
+        ]    
     }
 }

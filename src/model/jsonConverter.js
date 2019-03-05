@@ -4,20 +4,25 @@ const { JSDOM } = jsdom;
 const strs = [];
 const obj = {};
 
-keys = ['End Uses', 'EAp2-6. Energy Use Summary', 'Site and Source Energy', 'Comfort and Setpoint Not Met Summary', 'Time Not Comfortable Based on Simple ASHRAE 55-2004']
+keys = ['End Uses', 'EAp2-6. Energy Use Summary', 
+        'Site and Source Energy', 'Comfort and Setpoint Not Met Summary', 
+        'Time Not Comfortable Based on Simple ASHRAE 55-2004',
+        'EAp2-6. Energy Use Summary'
+    ]
 values = ['Heating', 'Cooling', 'Interior Lighting', 
         'Additional', 'Total Site Energy', 'Net Site Energy', 
         'Total Source Energy', 'Net Source Energy',
         'Winter Clothes [hr]', 'Summer Clothes [hr]', 'Summer or Winter Clothes [hr]',
-        'Z01_S01_SLEEPINGROOM1', 'Z01_S02_SLEEPINGROOM2', 'Z01_S03_GROUPROOM1'
+        'Z01_S01_SLEEPINGROOM1', 'Z01_S02_SLEEPINGROOM2', 'Z01_S03_GROUPROOM1',
+        'Process Subtotal [kWh]', 'Total Energy Use [kWh]'
     ]
 
 const params = {
         'End Uses' : ['Electricity [kWh]', 'Natural Gas', 'Additinal Fuel', 'District Cooling', 'District Heating', 'Water'],
-        'EAp2-6. Energy Use Summary': ['Process Subtotal','Total Energy Use'],
         'Site and Source Energy' : ['Total Energy [kWh]', 'Energy Per Total Building Area [kWh/m2]', 'Energy Per Conditioned Building Area [kWh/m2]'],
         'Comfort and Setpoint Not Met Summary' : ['Time Not Comfortable Based on Simple ASHRAE 55-2004'],
-        'Time Not Comfortable Based on Simple ASHRAE 55-2004' : ['Winter Clothes [hr]', 'Summer Clothes [hr]', 'Summer or Winter Clothes [hr]']
+        'Time Not Comfortable Based on Simple ASHRAE 55-2004' : ['Winter Clothes [hr]', 'Summer Clothes [hr]', 'Summer or Winter Clothes [hr]'],
+        'EAp2-6. Energy Use Summary' : ['Electricity', 'Natural Gas', 'Additional', 'Total']
 }
 
 
