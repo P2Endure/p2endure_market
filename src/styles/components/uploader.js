@@ -34,14 +34,13 @@ constructor(props){
       
 render(){
     return(  
-        <div className="upload-action">
-          <label htmlFor="file-upload" className="action-Button" onChange={this.uploadFile}>
-             Upload File
-          </label>
-          <input id="file-upload" type="file"  />
-          <div className="start-simulation">
+      <div>
+        <div className="upload"> 
+          <input type="file" onChange={this.uploadFile}/> 
+        </div>
+      <div className="start-simulation">
             <button className="action-Button" onClick={this.startEnergyPlus}>Start Simulation</button>
           </div>
-        </div>  
+          </div> 
     )}
 }

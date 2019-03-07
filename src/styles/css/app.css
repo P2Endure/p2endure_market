@@ -498,9 +498,9 @@ Button
   font-size: 15px;
 }
 
-input[type="file"] {
+/* input[type="file"] {
   display: none;
-}
+} */
 /*********************************
 SVG elements
 *********************************/

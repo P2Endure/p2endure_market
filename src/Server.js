@@ -29,7 +29,7 @@ app.get('/express_backend/:filename', (body, res) => {
   const f = body.params.filename;
 
   let child = spawn(
-    'C:\\EnergyPlusV9-0-1\\EP-Launch.exe',
+    'C:\\EnergyPlusV8-8-0\\EP-Launch.exe',
     [process.cwd()+"src/"+ f + ".idf"]
   );
   child.stdout.on('data', function (data) {

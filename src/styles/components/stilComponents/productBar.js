@@ -113,7 +113,7 @@ return(
     </Col>
     <Col xs={6} md={2}>
       <Thumbnail className="thumbNail" src={require('../img/easy_panel.jpg')} alt="242x200">
-        <h6>prefabricated panel</h6>
+        <h6>Fermacell Panel</h6>
         <Accordion>
           <Panel header="More" eventKey="4">
            Hier Text!!!
@@ -131,7 +131,7 @@ return(
     </Col>
     <Col xs={6} md={2}>
       <Thumbnail className="thumbNail" src={require('../img/RAtW.jpg')}>
-        <h6>Heatpump</h6>
+        <h6>On-side facade</h6>
         <Accordion>
           <Panel header="More" eventKey="5">
              Transfers heat energy from a source of heat to a destination
