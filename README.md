@@ -61,5 +61,5 @@ Change renovation options:
 
 Check new results:
 
-![](part_4.gif)
+![](part_4.1.gif)
 
