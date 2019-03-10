@@ -48,18 +48,18 @@ DEMO:
 ___
 
 Upload File and start simulation:
-
+![](part_1.gif)
 
 
 Check simualtion results:
-
+![](part_2.gif)
 
 
 Change renovation options:
-
+![](part_3.gif)
 
 
 Check new results:
-
+![](part_4.1.gif)
 
 
