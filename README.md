@@ -45,4 +45,21 @@ ___
 11) The installation is done! Great. Now you can start the e-Marketplace via "npm run dev". After a few seconds, your favourite browser opens and you will see the P2Endure front end.
 
 DEMO:
+___
+
+Upload File and start simulation:
+
 ![](part_1.gif)
+
+Check simualtion results:
+
+![](part_2.gif)
+
+Change renovation options:
+
+![](part_3.gif)
+
+Check new results:
+
+![](part_4.gif)
+
