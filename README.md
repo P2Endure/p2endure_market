@@ -56,7 +56,7 @@ Check simualtion results:
 
 
 Change renovation options:
-![](part_3.gif)
+![](part_3.1.gif)
 
 
 Check new results:
