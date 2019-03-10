@@ -44,3 +44,5 @@ ___
 10) After the packages are installed, please enter "npm install react-select-2"
 11) The installation is done! Great. Now you can start the e-Marketplace via "npm run dev". After a few seconds, your favourite browser opens and you will see the P2Endure front end.
 
+DEMO:
+![](part_1.gif)
