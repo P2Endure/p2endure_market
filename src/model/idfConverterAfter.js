@@ -1,11 +1,12 @@
+//idfConverterAfter,js with the toRemoveAfter value, which I want to export
 const fs = require('fs');
 
 const key = /!\s+(\=+\s+?GAP - MATERIAL GLASS\s+=+)\s+!/g;
 const end = /!/g;
 
 values = ['Material:NoMass'];
-
-var text = fs.readFile('../upload/Warszawa_phase2_bgtec_summermode.expidf', function(err, text) {
+module.exports = {
+ text : fs.readFile('../upload/Warszawa_phase2_bgtec_summermode.expidf', function(err, text) {
     if (err) {
         throw err;
     }
@@ -19,7 +20,7 @@ var text = fs.readFile('../upload/Warszawa_phase2_bgtec_summermode.expidf', func
             let isMatch = testBegin(line, "GAP - MATERIAL GLASS");
 
             if (isMatch) {
-                console.log("match ", i)
+                //console.log("match ", i)
                 block.begin = i;
                 let counter = i + 1
                 while (true) {
@@ -33,10 +34,11 @@ var text = fs.readFile('../upload/Warszawa_phase2_bgtec_summermode.expidf', func
             }
         }
     };
-    let toRemove = idf.splice(block.begin, block.end - block.begin); // an array of lines to remove/replace, it has been removed from idf
-    toRemove = toRemove.toString().replace(/(\r\n|\n|\r)/gm,"");
-    console.log(toRemove);
-});
+    var toRemoveAfter = idf.splice(block.begin, block.end - block.begin); // an array of lines to remove/replace, it has been removed from idf
+    toRemoveAfter = toRemoveAfter.toString().replace(/(,\r\n|\n|\r\,)/gm,"\n");  
+    //console.log(toRemoveAfter);
+})};
+
 
 function testBegin(text, key) {
     var regex = new RegExp(`(^!).*${key}`);
@@ -57,3 +59,7 @@ function testEnd(text) {
     }
     //^!\W*((?i)GAP - MATERIAL GLASS(?-i))\W*
 }
+
+
+
+

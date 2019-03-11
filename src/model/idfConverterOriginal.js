@@ -1,8 +1,13 @@
+//idfConverterBefore,js where I want to import the toRemoveAfter value
+
+const test = require('./idfConverterAfter.js')
+//console.log(JSON.stringify(test));
+
 const fs = require('fs');
 
 const key = /!\s+(\=+\s+?GAP - MATERIAL GLASS\s+=+)\s+!/g;
 const end = /!/g;
-
+  
 values = ['Material:NoMass'];
 
 var text = fs.readFile('../upload/Warszawa_primary_validated.idf', function(err, text) {
@@ -10,7 +15,7 @@ var text = fs.readFile('../upload/Warszawa_primary_validated.idf', function(err,
         throw err;
     }
     /* console.log("Material:NoMass: ", getValueByKey(text, "Material:NoMass"));  */
-    const idf = text.toString().split("\n");
+    let idf = text.toString().split("\n");
     var lines_n = idf.length;
     let block = {};
     for (let i = 0; i <= lines_n; i++) {
@@ -19,7 +24,7 @@ var text = fs.readFile('../upload/Warszawa_primary_validated.idf', function(err,
             let isMatch = testBegin(line, "GAP - MATERIAL GLASS");
 
             if (isMatch) {
-                console.log("match ", i)
+                //console.log("match ", i)
                 block.begin = i;
                 let counter = i + 1
                 while (true) {
@@ -33,8 +38,17 @@ var text = fs.readFile('../upload/Warszawa_primary_validated.idf', function(err,
             }
         }
     };
-    let toRemove = idf.splice(block.begin, block.end - block.begin); // an array of lines to remove/replace, it has been removed from idf
-    
+    let toRemoveOriginal = idf.splice(block.begin, block.end - block.begin); // an array of lines to remove/replace, it has been removed from idf
+    //toRemoveOriginal = toRemoveOriginal.toString().replace(/(\r\n|\n|\r)/gm,"\n");
+    idf.push(test);
+    idf = idf.toString().replace(/(,\r\n|\n|\r\,)/gm,"\n");
+    //console.log(idf);
+/*     idf = idf.toString().replace(/(\r\n|\n|\r)/gm,"");
+    console.log(idf);
+    //toRemoveOriginal = toRemoveOriginal.toString().replace(/(\r\n|\n|\r)/gm,""); */
+   
+    var fs = require('fs');
+    fs.writeFile('../upload/modelOutput_test_3.idf', idf, 'utf8');
 });
 
 function testBegin(text, key) {
@@ -56,3 +70,4 @@ function testEnd(text) {
     }
     //^!\W*((?i)GAP - MATERIAL GLASS(?-i))\W*
 }
+
