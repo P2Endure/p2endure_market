@@ -5,7 +5,7 @@ const end = /!/g;
 
 values = ['Material:NoMass'];
 
-var text = fs.readFile('./Warszawa_primary_validated.idf', function(err, text) {
+var text = fs.readFile('../upload/Warszawa_phase2_bgtec_summermode.expidf', function(err, text) {
     if (err) {
         throw err;
     }
@@ -34,7 +34,8 @@ var text = fs.readFile('./Warszawa_primary_validated.idf', function(err, text) {
         }
     };
     let toRemove = idf.splice(block.begin, block.end - block.begin); // an array of lines to remove/replace, it has been removed from idf
-    
+    toRemove = toRemove.toString().replace(/(\r\n|\n|\r)/gm,"");
+    console.log(toRemove);
 });
 
 function testBegin(text, key) {
