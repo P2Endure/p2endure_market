@@ -20,7 +20,10 @@ Check new results:
 INSTALLATION STEPS:
 ___
 1) Download the e-Marketplace from this GitHUb page and unpack the packages at your computer
+![](install_1.gif)
 2) Open a command line (on windows enter "cmd" or "powershell" into the searchbar) and go to the directory, where you stored the unpacked e-Marketplace folder.
+![](install_2.gif)
 3) When you had correct path of folder, please enter "npm install" to install the packages.
-4) After the packages are installed, please enter "npm install react-select-2"
-5) The installation is done! Great. Now you can start the e-Marketplace via "npm run dev". After a few seconds, your favourite browser opens and you will see the P2Endure front end.
+4) The installation is done! Great. Now you can start the e-Marketplace via "npm run dev". 
+After a few seconds, your favourite browser opens and you will see the P2Endure front end.
+![](install_3.gif)
