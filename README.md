@@ -28,4 +28,4 @@ ___
 
 4) The installation is done! Great. Now you can start the e-Marketplace via "npm run dev". 
 After a few seconds, your favourite browser opens and you will see the P2Endure front end.
-![](install_3.gif)
+![](install_3_1.gif)
