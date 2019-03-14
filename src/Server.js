@@ -11,6 +11,7 @@ const fs = require("fs")
 const spawn = require('child_process').spawn;
 const checkRoute = require('./routes/check.route');
 
+
 mongoose.Promise = global.Promise;
 mongoose.connect(config.DB, { useNewUrlParser: true }).then(
   () => {console.log('Database is connected') },
@@ -21,7 +22,7 @@ mongoose.connect(config.DB, { useNewUrlParser: true }).then(
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
 app.use(cors())
-app.use(bodyParser.json());
+app.use(bodyParser.json({limit: '50mb'}));
 app.use('/checks', checkRoute);
 
 // create a GET route
@@ -46,10 +47,38 @@ app.get('/express_backend/:filename', (body, res) => {
   res.send('EnergyPlus is running');
 });
 
+app.get('/upload/add', function (req, res){
+  const text = fs.readFileSync('C:/Users/Christoph/Documents/GitHub/p2endure_market/src/upload/add/Warszawa_phase2_bgtec_summermode.idf', 'utf8');
+  res.send(text);
+})
+
+app.get('/upload', function (req, res){
+  const text = fs.readFileSync('C:/Users/Christoph/Documents/GitHub/p2endure_market/src/upload/Warszawa_primary_validated.idf', 'utf8');
+  res.send(text);
+})
+
+app.post('/upload', function (req, res){
+  console.log(req.body)
+  fs.writeFile('C:/Users/Christoph/Documents/GitHub/p2endure_market/src/upload/Warszawa_primary_validated_after.idf', req.body.text, 
+    (err) => {
+      if (err) throw err;
+      console.log('file saved');
+  res.send(true)});
+})
+
+app.post('/upload/add', function (req, res){
+  console.log(req.body)
+  fs.writeFile('C:/Users/Christoph/Documents/GitHub/p2endure_market/src/upload/add/Warszawa_phase2_bgtec_summermode_after.idf', req.body.text, 
+    (err) => {
+      if (err) throw err;
+      console.log('file saved');
+  res.send(true)});
+})
+
 // default options
 app.use(fileUpload());
 
-app.post('/upload', function(req, res) {
+/* app.post('/upload', function(req, res) {
   if (Object.keys(req.files).length == 0) {
     return res.status(400).send('No files were uploaded.');
   }
@@ -68,4 +97,4 @@ app.post('/upload', function(req, res) {
         name: sampleFile.name
       })
   })
-});
+});  */

@@ -1,81 +1,115 @@
-//idfConverterBefore,js where I want to import the toRemoveAfter value
+import React, { Component } from 'react';
+import IdfConverter2 from './idfConverterAfter';
+//const getDataText = require('./idfConverterAfter.js')
+//const string = getDataText();
+//values = ["GAP - MATERIAL GLASS", "GAP - MATERIAL FRAME", "GAP - CONSTRUCION"];
 
-const getDataText = require('./idfConverterAfter.js')
-const string = getDataText();
-const fs = require('fs');
-const key = /!\s+(\=+\s+?GAP - MATERIAL GLASS\s+=+)\s+!/g;
-const end = /!/g;
-  
-values = ["GAP - MATERIAL GLASS", "GAP - MATERIAL FRAME", "GAP - CONSTRUCION"];
+export default class IdfConverter extends React.Component{
 
-var text = fs.readFile('../upload/Warszawa_primary_validated.idf', function(err, text) {
-    if (err) {
-        throw err;
+constructor(props){
+    super(props)
+    this.state = {
+        values: ["GAP - MATERIAL GLASS", "GAP - MATERIAL FRAME", "GAP - CONSTRUCION"], 
     }
-    let idf = text.toString().split("\n");
-    var lines_n = idf.length;
-    let block = {};
-    values.forEach(v => { 
-        block[v] = {};
-    })
-    for (let i = 0; i <= lines_n; i++) {
-        let line = idf[i];
-        if (line) {
-            values.forEach( (v) => {
-            let isMatch = testBegin(line, v);
-            if (isMatch) {
-                //console.log("match ", i)
-                block[v].begin = i;
-                let counter = i + 1
-                while (true) {
-                    let endLine = idf[counter];
-                    if (testEnd(endLine)) {
-                        block[v].end = counter;
-                        break;
+    this.testBegin = this.testBegin.bind(this);
+ }  
+    
+getFile  = (e) =>{
+    fetch (`http://localhost:4000/upload`, {
+        method: "GET"
+    }).then(response => {
+        return response.text()
+    }).then(text => {
+        let idf = text.toString().split("\n");
+        var lines_n = idf.length;
+        let block = {};
+        this.state.values.forEach(v => { 
+            block[v] = {};
+        })
+        for (let i = 0; i <= lines_n; i++) {
+            let line = idf[i];
+            if (line) {
+                this.state.values.forEach( (v) => {
+                let isMatch = this.testBegin(line, v);
+                if (isMatch) {
+                    //console.log("match ", i)
+                    block[v].begin = i;
+                    let counter = i + 1
+                    while (true) {
+                        let endLine = idf[counter];
+                        if (this.testEnd(endLine)) {
+                            block[v].end = counter;
+                            break;
+                        }
+                        counter++
+                        }   
                     }
-                    counter++
-                    }   
-                }
-            })
+                })
+            }
+
         }
-    }
-    for (var key in block){
-        if(block.hasOwnProperty(key)) {
-            let b = block[key]
-                var toRemoveOriginal = idf.splice(b.begin, 94, b.end - b.begin);
-                toRemoveOriginal = toRemoveOriginal.toString().replace(/(,\r\n|\n|\r\,)/gm,"\n");
-                //console.log(toRemoveAfter);
-            
-        }}
-    //let toRemoveOriginal = idf.splice(block.begin, block.end - block.begin); // an array of lines to remove/replace, it has been removed from idf
-    //toRemoveOriginal = toRemoveOriginal.toString().replace(/(\r\n|\n|\r)/gm,"\n");
-    idf.push(string);
-    idf = idf.toString().replace(/(,\r\n|\n|\r\,)/gm,"\n");
-    var fs = require('fs');
-    fs.writeFile('../upload/modelOutput_test_3.idf', idf, 'utf8', function(e){
-        console.log("done"); 
-    }
-    ); 
 
-});
+        for (var key in block){
+            if(block.hasOwnProperty(key)) {
+  
+                let b = block[key]
+                    var toRemoveOriginal = idf.splice(b.begin, 94, b.end - b.begin);
+                    toRemoveOriginal = toRemoveOriginal.toString().replace(/(,\r\n|\n|\r\,)/gm,"\n");
+                    //console.log(toRemoveOriginal);
+                
+        }} 
+        //idf.push(this.state.toRemoveAfter);
+        idf = idf.toString().replace(/(,\r\n|\n|\r\,)/gm,"\n");
+        console.log(idf);
+        this.storeFile(idf)
+        console.log(this.storeFile);
+    }).catch(err => {
+        console.log(err);
+    })
 
-function testBegin(text, key) {
+};
+
+storeFile (text) {
+    console.log("Festch", text);
+    fetch ("http://localhost:4000/upload", {
+        headers: {
+            "Content-Type": "application/json",
+            // "Content-Type": "application/x-www-form-urlencoded",
+        },
+          body: JSON.stringify({text: text}),
+          method: "POST"
+        })
+        .then(response => {
+            response.json();
+        }).then(txt => {
+            console.log('txt: ', txt)
+        }).catch(err => {
+            console.log('Error: ', err)
+        })
+}
+
+testBegin (text, key) {
     var regex = new RegExp(`(^!).*${key}`);
     if (text.match(regex)) {
         return true;
     } else {
-        return false;
-    }
-    //^!\W*((?i)GAP - MATERIAL GLASS(?-i))\W*
-}
 
-function testEnd(text) {
+}} 
+
+testEnd(text) {
     var regex = new RegExp(`(^!).*`)
     if (text.match(regex)) {
         return true;
     } else {
         return false;
-    }
-    //^!\W*((?i)GAP - MATERIAL GLASS(?-i))\W*
+}} 
+      
+render(){
+    return(  
+      <div>
+        <div className="start-simulation">
+            <button className="action-Button" onClick={this.getFile}>Resimulation</button>
+        </div>
+    </div> 
+    )}
 }
-

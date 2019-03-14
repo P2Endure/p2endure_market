@@ -10,6 +10,8 @@ import Jumbo from './styles/components/stilComponents/jumbo';
 import Uploader from './styles/components/uploader';
 import Footer from './styles/components/stilComponents/footer';
 import Products from './styles/components/stilComponents/productBar';
+import IdfConverer from './model/idfConverterOriginal.js';
+import IdfConverter2 from './model/idfConverterAfter';
 
 import Diagram from './model/diagram.js';
 import { Row, Col} from 'react-bootstrap';
@@ -47,6 +49,8 @@ render(){
       <Jumbo/>
       <Products/>
       <Uploader/>
+      <IdfConverer/>
+      <IdfConverter2/>
       <Diagram/>  
       <Footer/>
     </div>
