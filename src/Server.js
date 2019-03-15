@@ -48,18 +48,20 @@ app.get('/express_backend/:filename', (body, res) => {
 });
 
 app.get('/upload/add', function (req, res){
-  const text = fs.readFileSync('C:/Users/Christoph/Documents/GitHub/p2endure_market/src/upload/add/Warszawa_phase2_bgtec_summermode.idf', 'utf8');
+  console.log('two')
+  const text = fs.readFileSync('C:/Users/CivilSystems/P2Endure/p2endure_market/src/upload/add/Warszawa_phase2_bgtec_summermode.idf', 'utf8');
   res.send(text);
 })
 
 app.get('/upload', function (req, res){
-  const text = fs.readFileSync('C:/Users/Christoph/Documents/GitHub/p2endure_market/src/upload/Warszawa_primary_validated.idf', 'utf8');
+  console.log('one')
+  const text = fs.readFileSync('C:/Users/CivilSystems/P2Endure/p2endure_market/src/upload/Warszawa_primary_validated.idf', 'utf8');
   res.send(text);
 })
 
 app.post('/upload', function (req, res){
-  console.log(req.body)
-  fs.writeFile('C:/Users/Christoph/Documents/GitHub/p2endure_market/src/upload/Warszawa_primary_validated_after.idf', req.body.text, 
+  console.log("three")
+  fs.writeFile('C:/Users/CivilSystems/P2Endure/p2endure_market/src/upload/Warszawa_primary_validated_after.idf', req.body.text, 
     (err) => {
       if (err) throw err;
       console.log('file saved');
@@ -68,7 +70,7 @@ app.post('/upload', function (req, res){
 
 app.post('/upload/add', function (req, res){
   console.log(req.body)
-  fs.writeFile('C:/Users/Christoph/Documents/GitHub/p2endure_market/src/upload/add/Warszawa_phase2_bgtec_summermode_after.idf', req.body.text, 
+  fs.writeFile('C:/Users/CivilSystems/P2Endure/p2endure_market/src/upload/add/Warszawa_phase2_bgtec_summermode_after.idf', req.body.text, 
     (err) => {
       if (err) throw err;
       console.log('file saved');
