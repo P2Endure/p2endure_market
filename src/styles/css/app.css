@@ -498,6 +498,28 @@ Button
   font-size: 15px;
 }
 
+.action-Button_3{
+  margin-left:34.1%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  margin-right:5%;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+  border: solid;
+  border-color: #ddd;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 4px;
+  color: black;
+  text-align: center;
+  padding: 1px;
+  width: 180px;
+  transition: all 0.5s;
+  cursor: pointer;
+  font-size: 15px;
+}
+
 /* input[type="file"] {
   display: none;
 } */

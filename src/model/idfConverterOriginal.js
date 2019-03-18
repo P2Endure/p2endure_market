@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import IdfConverter2 from './idfConverterAfter';
+//import IdfConverter2 from './idfConverterAfter';
 const values = ["GAP - MATERIAL GLASS", "GAP - MATERIAL FRAME", "GAP - CONSTRUCION"];
 
 export default class IdfConverter extends React.Component{
@@ -12,14 +12,7 @@ constructor(props){
     this.testBegin = this.testBegin.bind(this);
  }
 
-//  handleButtonClick() {
-// if (this.state.simulationRun === 1) {
-//   this.getFile();
-//   this.setState({simulationRun: 2})
-// } else {
-//     this.secondSimulation();
-// }
-// }
+ //getFile for new data exchange start
     
 getFile  = (e) =>{
     fetch (`http://localhost:4000/upload`, {
@@ -175,13 +168,13 @@ testEnd_2(text) {
     } else {
         return false;
 }} 
-
-//hier handleButtonClick   
+//getFile for new data exchange end
+ 
 render(){
     return(  
       <div>
         <div className="start-simulation">
-            <button className="action-Button" onClick={this.getFile}>Resimulation</button>
+            <button className="action-Button_2" onClick={this.getFile}>Submit</button>
         </div>
     </div> 
     )}

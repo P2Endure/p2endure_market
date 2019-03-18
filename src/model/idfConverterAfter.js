@@ -8,10 +8,8 @@ export default class IdfConverter2 extends React.Component{
 constructor(props){
     super(props)
     this.state = {
-        values: ["GAP - MATERIAL GLASS", "GAP - MATERIAL FRAME", "GAP - CONSTRUCION"],
-        toRemoveAfter: "",
+        values: ["GAP - MATERIAL GLASS", "GAP - MATERIAL FRAME"],
     }
-    console.log("RemoveAfter_2", this.toRemoveAfter);
     this.testBegin = this.testBegin.bind(this);
  }  
     
@@ -52,10 +50,10 @@ getFile  = (e) =>{
          for (var key in block){
             if(block.hasOwnProperty(key)) {
                 let b = block[key]
-                    this.state.toRemoveAfter = idf.splice(b.begin, 94, b.end - b.begin);
+                    this.state.toRemoveAfter = idf.splice(b.begin, 124, b.end - b.begin);
                     this.state.toRemoveAfter = this.state.toRemoveAfter.toString().replace(/(,\r\n|\n|\r\,)/gm,"\n");
                     console.log("RemoveAfter_3", this.state.toRemoveAfter);
-                    this.storeFile(this.state.RemoveAfter)
+                    this.storeFile(this.state.toRemoveAfter)
                     console.log("STorefile", this.storeFile);
                     return toRemoveAfter    
         }
@@ -67,7 +65,7 @@ getFile  = (e) =>{
     })
 };
 
-/* storeFile (text) {
+storeFile (text) {
     console.log("Festch", text);
     fetch ("http://localhost:4000/upload/add", {
         headers: {
@@ -84,7 +82,7 @@ getFile  = (e) =>{
         }).catch(err => {
             console.log('Error: ', err)
         })
-} */
+}
 
 testBegin (text, key) {
     var regex = new RegExp(`(^!).*${key}`);
