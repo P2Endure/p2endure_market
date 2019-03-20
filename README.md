@@ -18,6 +18,11 @@ Check new results:
 ![](part_4.1.gif)
 
 INSTALLATION STEPS:
+Please check, if Node and MongoDB is already on your computer. If not, please download the software here:
+Node
+https://nodejs.org/en/download/
+Mongo Database
+https://docs.mongodb.com/manual/administration/install-community/
 ___
 1) Download the e-Marketplace from this GitHUb page and unpack the packages at your computer
 ![](install_1.gif)
