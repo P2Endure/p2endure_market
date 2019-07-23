@@ -1,5 +1,7 @@
 import React from 'react';
-import { Collapse } from 'reactstrap';
+import PropTypes from 'prop-types'
+import { Collapse } from 'react-collapse';
+import {presets} from 'react-motion';
 import ReactDOM from 'react-dom';
 import {LinkContainer} from 'react-router-bootstrap';
 import { BrowserRouter, Route } from 'react-router-dom';
@@ -14,12 +16,19 @@ import Uploader from '../styles/components/uploader.js';
 
 export default class Diagram extends React.Component{
 
+  static propTypes = {
+    isOpened: PropTypes.bool
+  };
+
+  static defaultProps = {
+    isOpened: false
+  };
+
   constructor(props){
     super(props);
-    this.toggle = this.toggle.bind(this);
     this.state = {
       valueSingle : uploadData.EAp2_6_Energy_Use_Summary.Additional,
-      collapse: false
+      isOpened: this.props.isOpened, paragraphs: 0
     }
   }
 
@@ -30,18 +39,23 @@ export default class Diagram extends React.Component{
     })
   }
 
-  toggle() {
-    this.setState(state => ({ collapse: !state.collapse }));
-  }
-
 render(){
+  const {isOpened, paragraphs} = this.state;
   return(
     <div>
-    <Uploader/>
-  
-      <button className="action-Button_3" onClick={this.toggle} >Present results</button>
-        <Collapse isOpen={this.state.collapse}>
-          <div className="line">
+      <Uploader/>
+      <div>
+        <div className="config">
+      <label className="label"> Present results
+      <input className="input"
+              type="checkbox"
+              checked={isOpened}
+              onChange={({target: {checked}}) => this.setState({isOpened: checked})}/>
+      </label> 
+        </div>
+          </div>
+        <Collapse isOpened={isOpened}>
+         <div className="line">
             <Row>
               <Col md={4} lg={4}>
                 <Model/>
@@ -84,8 +98,8 @@ render(){
               </div>
               </Col>  
             </Row>
-          </div>  
-        </Collapse>   
+          </div> 
+        </Collapse>  
       </div>
     )
   }
