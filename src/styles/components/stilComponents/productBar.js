@@ -1,55 +1,26 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types'
 import {Panel, Grid, Row, Col, Thumbnail, Accordion } from 'react-bootstrap';
-import { Collapse, Button, CardBody, Card } from 'reactstrap';
+import { Collapse } from 'react-collapse';
 import materialData from '../../../model/data/ProductData/Material';
 import IdfConverter from '../../../model/idfConverterOriginal';
 
 export default class Products extends Component{
   constructor(props) {
     super(props);
-    this.toggle = this.toggle.bind(this);
-    this.state = { collapse: false };
+    this.state = {
+      isOpened: this.props.isOpened, paragraphs: 0
+    }
   }
 
-   state = {
-      isFirst: false,
-      isSecond: false,
-      isThird: false,
-      isFourths: false,
-      isFiths: false,
-    } 
+  static propTypes = {
+    isOpened: PropTypes.bool
+  };
 
-toggleChangeFirst = () => {
-  this.setState(prevState => ({
-    isFirst: !prevState.isFirst,
-    materialData:{materialData},
-  }));
-}
-
-toggleChangeSecond = () => {
-  this.setState(prevState => ({
-    isSecond: !prevState.isSecond,
-  }));
-}
-
-toggleChangeThird = () => {
-  this.setState(prevState => ({
-    isThird: !prevState.isThird,
-  }));
-}
-
-toggleChangeFour = () => {
-  this.setState(prevState => ({
-    isFourths: !prevState.isFourths,
-  }));
-}
-
-toggleChangeFive = () => {
-  this.setState(prevState => ({
-    isFiths: !prevState.isFiths,
-  }));
-}
+  static defaultProps = {
+    isOpened: false
+  };
 
 onSubmit = (e) => {
   e.preventDefault();
@@ -74,45 +45,57 @@ change = e =>{
   });
 };
 
-toggle() {
-  this.setState(state => ({ collapse: !state.collapse }));
-}
 
 render(){
+const {isOpened} = this.state;
 return(
 <div className="products"> 
 <Grid>
   <Row>
     <Col xs={6} md={2}>
       <Thumbnail className="thumbNail" src={require('../img/Casement.jpg')} >
-        <h6>smart window</h6>
-          <Panel header="More" onClick={this.toggle} eventKey='5'></Panel>
-            <Collapse isOpen={this.state.collapse}>
-              <Card>
-                <CardBody >
-                  Windows that can be rotated by 180° to reduce the thermal radiation
-                </CardBody>
-              </Card>
-            </Collapse>
+        <h6>Smart window</h6>
+          <div>
+            <div className="config">
+              <label className="label"> More
+                <input className="input"
+                        type="checkbox"
+                        checked={isOpened}
+                        onChange={({target: {checked}}) => this.setState({isOpened: checked})}/>
+              </label> 
+            </div>
+          </div>
+          <Collapse isOpened={isOpened}>
+            <h6>
+              Windows that can be rotated by 180° to reduce the thermal radiation
+            </h6>
+          </Collapse>  
         <form onSubmit = {this.onSubmit}>
-              <input type="checkbox"
-                checked={this.state.isFirst}
-                onChange={this.toggleChangeFirst}
-                value={console.log(this.state.materialData)} 
-              />
+          <input type="checkbox"
+            checked={this.state.isFirst}
+            onChange={this.toggleChangeFirst}
+            value={console.log(this.state.materialData)} 
+          />
         </form>
       </Thumbnail>
     </Col>
     <Col xs={6} md={2}>
       <Thumbnail className="thumbNail" src={require('../img/HVAC.JPG')}>
         <h6>Prefab HVAC system</h6>
-        <Panel header="More" onClick={this.toggle} eventKey='4'></Panel>
-          <Collapse isOpen={this.state.collapse}>
-            <Card>
-              <CardBody >
-                PnP MEP/HVAC engine for deep renovation
-              </CardBody>
-            </Card>
+        <div>
+            <div className="config">
+              <label className="label">More
+                <input className="input"
+                        type="checkbox"
+                        checked={isOpened}
+                        onChange={({target: {checked}}) => this.setState({isOpened: checked})}/>
+              </label> 
+            </div>
+          </div>
+          <Collapse isOpened={isOpened}>
+            <h6>
+              PnP MEP/HVAC engine for deep renovation
+            </h6>
           </Collapse>
         <form onSubmit = {this.onSubmit}>
               <input type="checkbox"
@@ -125,13 +108,20 @@ return(
     <Col xs={6} md={2}>
       <Thumbnail className="thumbNail" src={require('../img/easy_panel.jpg')} alt="242x200">
         <h6>Fermacell Panel</h6>
-        <Panel header="More" onClick={this.toggle} eventKey='1'></Panel>
-          <Collapse isOpen={this.state.collapse}>
-            <Card>
-              <CardBody >
+        <div>
+            <div className="config">
+              <label className="label">More
+                <input className="input"
+                        type="checkbox"
+                        checked={isOpened}
+                        onChange={({target: {checked}}) => this.setState({isOpened: checked})}/>
+              </label> 
+            </div>
+          </div>
+          <Collapse isOpened={isOpened}>
+            <h6>
                 Prefab panel
-              </CardBody>
-            </Card>
+            </h6>
           </Collapse>
         <form onSubmit = {this.onSubmit}>
               <input type="checkbox"
@@ -144,13 +134,20 @@ return(
     <Col xs={6} md={2}>
       <Thumbnail className="thumbNail" src={require('../img/RAtW.jpg')}>
         <h6>On-side facade</h6>
-        <Panel header="More" onClick={this.toggle} eventKey='2'></Panel>
-          <Collapse isOpen={this.state.collapse}>
-            <Card>
-              <CardBody >
-                Transfers heat energy from a source of heat to a destination
-              </CardBody>
-            </Card>
+        <div>
+            <div className="config">
+              <label className="label"> More
+                <input className="input"
+                        type="checkbox"
+                        checked={isOpened}
+                        onChange={({target: {checked}}) => this.setState({isOpened: checked})}/>
+              </label> 
+            </div>
+          </div>
+          <Collapse isOpened={isOpened}>
+            <h6>
+              Transfers heat energy from a source of heat to a destination 
+            </h6>
           </Collapse>
         <form onSubmit = {this.onSubmit}>
               <input type="checkbox"
@@ -163,13 +160,20 @@ return(
     <Col xs={6} md={2}>
       <Thumbnail className="thumbNail" src={require('../img/Heatpump.JPG')}>
         <h6>Heatpump</h6>
-        <Panel header="More" onClick={this.toggle} eventKey='3'></Panel>
-          <Collapse isOpen={this.state.collapse}>
-            <Card>
-              <CardBody >
-                Transfers heat energy from a source of heat to a destination
-              </CardBody>
-            </Card>
+        <div>
+            <div className="config">
+              <label className="label">More
+                <input className="input"
+                        type="checkbox"
+                        checked={isOpened}
+                        onChange={({target: {checked}}) => this.setState({isOpened: checked})}/>
+              </label> 
+            </div>
+          </div>
+          <Collapse isOpened={isOpened}>
+            <h6>
+              Transfers heat energy from a source of heat to a destination
+            </h6>
           </Collapse>
         <form onSubmit = {this.onSubmit}>
               <input type="checkbox"

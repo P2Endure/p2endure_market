@@ -46,14 +46,14 @@ render(){
       <Uploader/>
       <div>
         <div className="config">
-      <label className="label"> Present results
-      <input className="input"
-              type="checkbox"
-              checked={isOpened}
-              onChange={({target: {checked}}) => this.setState({isOpened: checked})}/>
-      </label> 
+          <label className="label"> Present results
+            <input className="input"
+                    type="checkbox"
+                    checked={isOpened}
+                    onChange={({target: {checked}}) => this.setState({isOpened: checked})}/>
+          </label> 
         </div>
-          </div>
+      </div>
         <Collapse isOpened={isOpened}>
          <div className="line">
             <Row>
