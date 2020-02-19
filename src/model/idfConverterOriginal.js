@@ -12,9 +12,7 @@ FenestrationSurface:Detailed,
   0.5,             ! View Factor to Ground 
   ,                ! Name of shading control 
   ,                ! WindowFrameAndDivider Name 
-  1,               ! Multiplier 
-  4,               ! NVertex [AREA=5.29] 
-  `;
+  1,               ! Multiplier`;
 
 export default class IdfConverter extends React.Component{
 
@@ -28,21 +26,15 @@ constructor(props){
 
  //getFile for new data exchange start
 
- replaceString = (originalString, searchString, replacementString, startIndex) => {
-   const instanceIndex = originalString.indexOf(searchString, startIndex);
+ replaceString = (originalString, searchString, replacementString) => {
+   const instanceIndex = originalString.indexOf(searchString);
 
    if (instanceIndex !== -1) {
-     const nVertexIndex = originalString.indexOf('NVertex', instanceIndex);
-     const bracketIndex = originalString.indexOf(']', nVertexIndex);
-     return {
-         newString: originalString.slice(0, instanceIndex) + replacementString + originalString.slice(bracketIndex + 1),
-         instanceIndex: instanceIndex,
-     }
+     const materialIndex = originalString.indexOf('Multiplier', instanceIndex);
+     const rIndex = originalString.indexOf('r', materialIndex);
+     return originalString.slice(0, instanceIndex) + replacementString + originalString.slice(rIndex + 1);
   }
-  return {
-      newString: originalString,
-      instanceIndex: -1,
-  }
+  return originalString;
  }
     
 getFile  = (e) =>{
@@ -52,15 +44,17 @@ getFile  = (e) =>{
         return response.text()
     }).then(text => {
 
-        let newIdf = text;
-        let lastIndex = -1;
+        console.log(text)
 
-     do {
-          const result = this.replaceString(newIdf, 'FenestrationSurface:Detailed,', windowString, lastIndex + 1);
-          newIdf = result.newString;
-          lastIndex = result.instanceIndex;
-          console.log(lastIndex)
-        } while(lastIndex !== -1)
+        let idfArray = text.split(';');
+
+        idfArray.forEach((a, i) => {
+           let result = this.replaceString(a, 'FenestrationSurface', windowString);
+           idfArray.splice(i, 1, result)
+        })
+
+        let newIdf = idfArray.join(';');
+
         console.log(newIdf);
 
 
