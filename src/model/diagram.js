@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 import { Collapse } from 'react-collapse';
-import {presets} from 'react-motion';
 import ReactDOM from 'react-dom';
 import {LinkContainer} from 'react-router-bootstrap';
 import { BrowserRouter, Route } from 'react-router-dom';

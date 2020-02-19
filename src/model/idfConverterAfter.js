@@ -66,7 +66,7 @@ getFile  = (e) =>{
 };
 
 storeFile (text) {
-    console.log("Festch", text);
+    console.log("Fetch", text);
     fetch ("http://localhost:4000/upload/add", {
         headers: {
             "Content-Type": "application/json",

@@ -2,6 +2,20 @@ import React, { Component } from 'react';
 //import IdfConverter2 from './idfConverterAfter';
 const values = ["GAP - MATERIAL GLASS", "GAP - MATERIAL FRAME", "GAP - CONSTRUCION"];
 
+const windowString = `
+FenestrationSurface:Detailed, 
+  Z01_S01_W01_G1,  ! Name 
+  Window,          ! Surface Type 
+  H05_Window,      ! Construction Name 
+  Z01_S01_W01,     ! Building Surface Name 
+  ,                ! Outside Boundary Condition Object 
+  0.5,             ! View Factor to Ground 
+  ,                ! Name of shading control 
+  ,                ! WindowFrameAndDivider Name 
+  1,               ! Multiplier 
+  4,               ! NVertex [AREA=5.29] 
+  `;
+
 export default class IdfConverter extends React.Component{
 
 constructor(props){
@@ -13,6 +27,23 @@ constructor(props){
  }
 
  //getFile for new data exchange start
+
+ replaceString = (originalString, searchString, replacementString, startIndex) => {
+   const instanceIndex = originalString.indexOf(searchString, startIndex);
+
+   if (instanceIndex !== -1) {
+     const nVertexIndex = originalString.indexOf('NVertex', instanceIndex);
+     const bracketIndex = originalString.indexOf(']', nVertexIndex);
+     return {
+         newString: originalString.slice(0, instanceIndex) + replacementString + originalString.slice(bracketIndex + 1),
+         instanceIndex: instanceIndex,
+     }
+  }
+  return {
+      newString: originalString,
+      instanceIndex: -1,
+  }
+ }
     
 getFile  = (e) =>{
     fetch (`http://localhost:4000/upload`, {
@@ -20,43 +51,56 @@ getFile  = (e) =>{
     }).then(response => {
         return response.text()
     }).then(text => {
-        let idf = text.toString().split("\n");
-        var lines_n = idf.length;
-        let block = {};
-        values.forEach(v => { 
-            block[v] = {};
-        })
-        for (let i = 0; i <= lines_n; i++) {
-            let line = idf[i];
-            if (line) {
-                values.forEach( (v) => {
-                let isMatch = this.testBegin(line, v);
-                if (isMatch) {
-                    //console.log("match ", i)
-                    block[v].begin = i;
-                    let counter = i + 1
-                    while (true) {
-                        let endLine = idf[counter];
-                        if (this.testEnd(endLine)) {
-                            block[v].end = counter;
-                            break;
-                        }
-                        counter++
-                        }   
-                    }
-                })
-            }
 
-        }
+        let newIdf = text;
+        let lastIndex = -1;
 
-        for (var key in block){
-            if(block.hasOwnProperty(key)) {
+     do {
+          const result = this.replaceString(newIdf, 'FenestrationSurface:Detailed,', windowString, lastIndex + 1);
+          newIdf = result.newString;
+          lastIndex = result.instanceIndex;
+          console.log(lastIndex)
+        } while(lastIndex !== -1)
+        console.log(newIdf);
+
+
+        // let idf = text.toString().split("\n");
+        // var lines_n = idf.length;
+        // let block = {};
+        // values.forEach(v => { 
+        //     block[v] = {};
+        // })
+        // for (let i = 0; i <= lines_n; i++) {
+        //     let line = idf[i];
+        //     if (line) {
+        //         values.forEach( (v) => {
+        //         let isMatch = this.testBegin(line, v);
+        //         if (isMatch) {
+        //             //console.log("match ", i)
+        //             block[v].begin = i;
+        //             let counter = i + 1
+        //             while (true) {
+        //                 let endLine = idf[counter];
+        //                 if (this.testEnd(endLine)) {
+        //                     block[v].end = counter;
+        //                     break;
+        //                 }
+        //                 counter++
+        //                 }   
+        //             }
+        //         })
+        //     }
+
+        // }
+
+        // for (var key in block){
+        //     if(block.hasOwnProperty(key)) {
   
-                let b = block[key]
-                    var toRemoveOriginal = idf.splice(b.begin, 94, b.end - b.begin);
-                    toRemoveOriginal = toRemoveOriginal.toString().replace(/(,\r\n|\n|\r\,)/gm,"\n");       
-        }}
-        this.getFile_2();
+        //         let b = block[key]
+        //             var toRemoveOriginal = idf.splice(b.begin, 94, b.end - b.begin);
+        //             toRemoveOriginal = toRemoveOriginal.toString().replace(/(,\r\n|\n|\r\,)/gm,"\n");       
+        // }}
+        // this.getFile_2();
         //idf.push(toRemoveAfter);
         //idf = idf.toString().replace(/(,\r\n|\n|\r\,)/gm,"\n");
         //console.log("IDF ");
