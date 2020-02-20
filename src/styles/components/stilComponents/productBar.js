@@ -10,7 +10,13 @@ export default class Products extends Component{
   constructor(props) {
     super(props);
     this.state = {
-      isOpened: this.props.isOpened, paragraphs: 0
+      isOpened: this.props.isOpened,
+      paragraphs: 0,
+      smartWindow: false,
+      hvac: false,
+      panel: false,
+      facade: false,
+      heatPump: false,
     }
   }
 
@@ -45,6 +51,10 @@ change = e =>{
   });
 };
 
+newSubmit = () => {
+  console.log(this.state)
+}
+
 
 render(){
 const {isOpened} = this.state;
@@ -70,13 +80,11 @@ return(
               Windows that can be rotated by 180° to reduce the thermal radiation
             </h6>
           </Collapse>  
-        <form onSubmit = {this.onSubmit}>
           <input type="checkbox"
             checked={this.state.isFirst}
             onChange={this.toggleChangeFirst}
             value={console.log(this.state.materialData)} 
           />
-        </form>
       </Thumbnail>
     </Col>
     <Col xs={6} md={2}>
@@ -97,12 +105,10 @@ return(
               PnP MEP/HVAC engine for deep renovation
             </h6>
           </Collapse>
-        <form onSubmit = {this.onSubmit}>
               <input type="checkbox"
                 checked={this.state.isSecond}
                 onChange={this.toggleChangeSecond}
               />
-        </form>
       </Thumbnail>
     </Col>
     <Col xs={6} md={2}>
@@ -123,12 +129,10 @@ return(
                 Prefab panel
             </h6>
           </Collapse>
-        <form onSubmit = {this.onSubmit}>
               <input type="checkbox"
                 checked={this.state.isThird}
                 onChange={this.toggleChangeThird}
               />
-        </form>
       </Thumbnail>
     </Col>
     <Col xs={6} md={2}>
@@ -149,12 +153,7 @@ return(
               Transfers heat energy from a source of heat to a destination 
             </h6>
           </Collapse>
-        <form onSubmit = {this.onSubmit}>
-              <input type="checkbox"
-                checked={this.state.isFourths}
-                onChange={this.toggleChangeFour}
-              />
-        </form>
+          <input type="checkbox" checked={this.state.smartWindow} name="smartWindow" onChange={this.handleInputChange}/>
       </Thumbnail>
     </Col>
     <Col xs={6} md={2}>
@@ -175,16 +174,14 @@ return(
               Transfers heat energy from a source of heat to a destination
             </h6>
           </Collapse>
-        <form onSubmit = {this.onSubmit}>
-              <input type="checkbox"
-                checked={this.state.isFiths}
-                onChange={this.toggleChangeFive}
-              />
-        </form>
+              <input type="checkbox" checked={this.state.heatPump} name="heatPump" onChange={this.handleInputChange}/>
       </Thumbnail>
     </Col>
     <Col xs={6} md={2}>
     </Col>
+    <button onClick={this.newSubmit}>
+      Submit!!
+    </button>
    </Row>
    <IdfConverter/>
   <hr id="line"/>
