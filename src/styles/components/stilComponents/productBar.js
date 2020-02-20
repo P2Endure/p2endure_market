@@ -3,7 +3,6 @@ import axios from 'axios';
 import PropTypes from 'prop-types'
 import {Panel, Grid, Row, Col, Thumbnail, Accordion } from 'react-bootstrap';
 import { Collapse } from 'react-collapse';
-import materialData from '../../../model/data/ProductData/Material';
 import IdfConverter from '../../../model/idfConverterOriginal';
 
 export default class Products extends Component{

@@ -1,19 +1,37 @@
-import React, { Component } from 'react';
+import React from "react";
 
-const Footer = props =>
-    <footer>
-        <section className="textf">
-            <h2>Impressum</h2>
-            <p>The P2Endure E-Marketplace is under developing by Technical University Berlin.</p>
-        </section>
-        <section className="textcon">
-            <h2>Contact </h2>
-            <p>
-                Email: e-market@tu-berlin.com
-                Phone: 000-000-00
-                Adress: Gustav Meyer Allee 18, Berlin
-            </p>
-        </section>
-    </footer>;
+const FooterMenu = ({ menuItems, styles }) => {
+  return (
+    <div
+      style={{
+        display: "flex",
+        alignItems: "stretch",
+        width: "100%",
+        height: styles.footerMenuHeight,
+        backgroundColor: "#333",
+        color: "#fff",
+        position: "fixed",
+        bottom: 0
+      }}
+    >
+      {menuItems.map((item, i) => {
+        return (
+            <div
+                key={i}
+                style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                flex: 1
+            }}
+          >
+            <span style={{ fontSize: 20, marginRight: styles.showFooterMenuText ? 5 : 0 }}>{item.icon}</span>
+            {styles.showFooterMenuText && item.text}
+          </div>
+        );
+      })}
+    </div>
+  );
+};
 
-export default Footer;
+export default FooterMenu;

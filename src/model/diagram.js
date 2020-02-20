@@ -1,9 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 import { Collapse } from 'react-collapse';
-import ReactDOM from 'react-dom';
-import {LinkContainer} from 'react-router-bootstrap';
-import { BrowserRouter, Route } from 'react-router-dom';
 import Bar from './diagrams/bar_test.jsx';
 import Donut from './diagrams/donut.jsx';
 import Donut2 from './diagrams/donut2.jsx';
